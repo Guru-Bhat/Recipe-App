@@ -1,0 +1,29 @@
+
+.heading-text-level1{
+    font-size: 25px;
+    color: rgb(95, 130, 165);
+    margin: 5px 0px 15px 0px;
+}
+
+.heading-text-level2{
+    font-size: 15px;
+    color: rgb(17, 20, 22);
+    margin: 5px 0px 15px 0px;
+}
+.card{
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    width: 400px;
+    border: 1px solid rgb(211, 202, 191);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    margin-top: 2rem;
+}

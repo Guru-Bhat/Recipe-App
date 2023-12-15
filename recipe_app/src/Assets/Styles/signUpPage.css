@@ -1,0 +1,30 @@
+.signup-input{
+    height: 60px !important;
+    padding: 2px 10px 2px 10px !important;
+    line-height: 25px !important;
+    font-size: 15px;
+    color: black;
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.form-control-placeholder{
+    position: absolute !important;
+    top: 1rem;
+    padding: 10px 0 7px 10px !important;
+    transition: all 200ms;
+    opacity: 0.5;
+}
+
+.form-control{
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    background-clip: padding-box;
+    opacity: 0.5;
+}
+
+.form-group{
+    position: relative;
+}
