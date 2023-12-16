@@ -1,7 +1,7 @@
-import {Container, Form, FormGroup, Input,Button, Label} from 'reactstrap'
+import {Container, Form, FormGroup, Input, Button, Label} from 'reactstrap'
 import { useEffect, useState } from 'react'
 import Loader from '../../Components/Loader'
-import '../../Assets/Styles/common.css'
+import '../../Assets/Styles/common.scss'
 import '../../Assets/Styles/signUpPage.css'
 
 export default function SignUp(){
@@ -26,26 +26,35 @@ export default function SignUp(){
                 <Loader show={isProcessing} />
            
             <div className='card'>
-            <b className='heading-text-level1'>SignUp page</b>
+            <b className='heading-text-level1'>Sign Up</b>
                 <Form onSubmit={(e)=>submitFormHandler(e)} autoComplete='off'> 
                     <FormGroup className='form-group'>
                         <Input className="form-control signup-input" placeholder='Name*' type='text' name='fullName' value={fullName} maxLength={30} onChange={(e)=>handleInputField(e,'name')}  required />
                         {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Name<super>*</super></Label> */}
-                        <p className='required'>Required<super>*</super></p>
+                       
                     </FormGroup>
                     
                     <FormGroup className='form-group'>
                         <Input className='form-control signup-input' placeholder='Mobile number*' type='text' name='mobleNumber' value={mobleNumber} maxLength={30} onChange={(e)=>handleInputField(e,'mobileNumber')} />
                         {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label> */}
-                        <p className='required'>Required<super>*</super></p>
+                        
                     </FormGroup>
 
                     <FormGroup className='form-group'>
                         <Input className='form-control signup-input' placeholder='email*' type='text' name='email' value={email} maxLength={30} onChange={(e)=>handleInputField(e,'email')} />
                         {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label> */}
-                        <p className='required'>Required<super>*</super></p>
+                      
                     </FormGroup>
+
+                    <Button type = "submit" className={fullName && email ?
+                    "btn-active" :
+                    "btn-disabled"
+                    } >
+                        <p className='btn-text'>Next</p></Button>
+
                 </Form>
+
+                
             </div>
 
             </Container>
