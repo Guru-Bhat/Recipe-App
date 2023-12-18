@@ -2,7 +2,7 @@
 
 .heading-text-level1{
     font-size: 25px;
-    color: rgb(95, 130, 165);
+    color: $header-text-color;
     margin: 5px 0px 15px 0px;
 }
 
@@ -22,7 +22,7 @@
     margin-right: auto;
     padding-top: 30px;
     width: 400px;
-    border: 1px solid rgb(211, 202, 191);
+    border: 1px solid rgb(196, 188, 179);
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
@@ -30,17 +30,19 @@
 }
 
 .btn-active{
-    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     background-color: $btn-active;
     color: white;
     width: 100%;
     border-radius: 5px;
+    border: none;
 }
 
 .btn-disabled{
     margin-top: 1rem;
     margin-bottom: 2rem;
-    background-color:$btn-active;
+    background-color:$btn-disabled;
     color: white;
     width: 100%;
     border-radius: 5px;
@@ -49,4 +51,12 @@
 
 .btn-text{
     padding: auto;
+}
+
+.navBar{
+    background-color: #f6f5f8;
+}
+
+.logo{
+    width: 10%;
 }

@@ -3,9 +3,11 @@ import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 
 export default function Layout(){
+    return(
     <div>
         <Header />
         <Outlet />
         <Footer />
     </div>
+    )
 }

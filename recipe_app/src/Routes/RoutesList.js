@@ -1,5 +1,6 @@
 import SignUp from '../Pages/OnboardingPages/signUp'
 import SignIn from '../Pages/OnboardingPages/signIn'
+import DisplayRecipes from '../Pages/RecipePages/DisplayRecipes'
 
 const routes={
     signUp: SignUp,
@@ -7,6 +8,10 @@ const routes={
 
     signIn: SignIn,
     sign_in: "/recipe/signin",
+
+    displayRecipes: DisplayRecipes,
+    display_recipes: "/recipe/displayrecipes",
+    
 }
 
 export default routes;
