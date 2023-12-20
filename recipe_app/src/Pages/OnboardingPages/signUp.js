@@ -5,7 +5,7 @@ import Loader from '../../Components/Loader'
 import '../../Assets/Styles/common.scss'
 import '../../Assets/Styles/signUpPage.scss'
 import validateEmail from '../../customHooks/SignInSignUpHooks'
-import routers from '../../Routes/RoutesList'
+import routes from '../../Routes/RoutesList'
 
 export default function SignUp(){
     let [fullName,setfullName]= useState('')
@@ -43,7 +43,7 @@ else{
 }
 
    const submitFormHandler=(e)=>{
-    navigate("/recipe/displayrecipes");
+    navigate(routes.display_recipes);
    }
 
    

@@ -1,0 +1,159 @@
+{
+    "userData": [
+        {
+            "id": 1,
+            "name": "Test",
+            "userName": "admin",
+            "email": "admin@recipe.com",
+            "password": "admin1234",
+            "role": "admin"
+        }
+    ],
+    "recipesList": [
+        {
+            "id": 1,
+            "title": "Recipe1",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 2,
+            "title": "Recipe2",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 3,
+            "title": "Recipe3",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 4,
+            "title": "Recipe4",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 5,
+            "title": "Recipe5",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 6,
+            "title": "Recipe6",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 7,
+            "title": "Recipe7",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 8,
+            "title": "Recipe8",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 9,
+            "title": "Recipe9",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 10,
+            "title": "Recipe10",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 11,
+            "title": "Recipe11",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        },
+        {
+            "id": 12,
+            "title": "Recipe12",
+            "ingredients": [
+                "Ingredient 1",
+                "Ingredient 2"
+            ],
+            "directions": "test test test test..",
+            "author":"admin",
+            "rating":0,
+            "votes":0
+        }   
+        
+    ]
+}

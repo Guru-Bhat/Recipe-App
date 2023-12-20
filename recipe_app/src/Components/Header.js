@@ -17,11 +17,16 @@ import '../Assets/Styles/common.scss'
 
 export default function Header(){
     return(
-        <div className='navBar'>
-            <Navbar>
-                <img alt='logo' src={logo} className='logo'></img>
+        // <div >
+            <Navbar >
+                <div className='navBar'>
+                <img alt='logo' src={logo} className='logo' ></img>
+                <div style={{display:'inline-block'}}>
+                    {/* <p>profile dropdown</p> */}
+                </div>
+                </div>
             </Navbar>
             
-        </div>
+        // </div>
     )
 }

@@ -55,8 +55,20 @@
 
 .navBar{
     background-color: #f6f5f8;
+    border-bottom: 2px solid $navbar-border-color;
+    padding: 20px 5px 20px 5px;
 }
 
 .logo{
     width: 10%;
+}
+
+.footer{
+    background-color: black;
+    margin: 30px 0px 0px 0px;
+    padding: 10px 5px 10px 5px;
+}
+
+.links{
+    color: white;
 }
