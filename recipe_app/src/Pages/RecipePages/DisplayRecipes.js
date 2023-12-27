@@ -1,44 +1,48 @@
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { useGetRecipesQuery } from "../../Redux/apiSlice"
+import { useGetRecipesQuery, useGetRecipesByIdQuery } from "../../Redux/apiSlice"
 import { getImage } from "../../customHooks/GetImage";
 import { Button, Container } from "reactstrap";
 import '../../Assets/Styles/displayRecipes.scss'
 import { useNavigate } from 'react-router-dom';
 import routes from "../../Routes/RoutesList";
+import Loader from "../../Components/Loader";
 
 export default function DisplayRecipes() {
     const { data, error, isLoading } = useGetRecipesQuery();
+    const { dataa, errorr, isLoadingg } = useGetRecipesByIdQuery(2);
     const dispatch = useDispatch();
-    const navigate= useNavigate();
+    const navigate = useNavigate();
 
-    if (data) {
-        console.log("data", data)
+    if (dataa) {
+        console.log("dataa", dataa)
     }
 
-    const showRecipeDetails=(id)=>{
+    const showRecipeDetails = (id) => {
         navigate(routes.recipe_details,
             {
-                state: {recipeId:id}
+                state: { recipeId: id }
             });
     }
 
     return (
         <>
-            <h1>DisplayRecipes</h1>
+            <h1 className="heading-text-level1">DisplayRecipes</h1>
             <Container className="grid-container">
-            {!data ? (<div>{error ? error.message : 'loading'}</div>) :
-                data.map((recipe,i) => (
-                    <div className="recipeCard" key={i} onClick={()=>showRecipeDetails(recipe.id)} >
-                        <div className="imageContainer">
-                        <img alt={recipe.title} src={getImage(recipe.title)} className="recipeImage"></img>
-                        </div>
-                        {recipe.title}
-                        <p>Ratings</p>
-                    </div>
-                ))
-            }
-              </Container>
+                {isLoading ? <Loader show={isLoading} /> :
+                    (!data ? (<div>{error ? error.message : 'Under maintanace'}</div>) :
+                        data.map((recipe, i) => (
+                            <div className="recipeCard" key={i} onClick={() => showRecipeDetails(recipe.id)} >
+                                <img alt={recipe.title} src={getImage(recipe.title)} className="recipeImage"></img>
+                                <p>{recipe.category} | {recipe.subCategory}</p>
+                                
+                                <b className="heading-text-level1">{recipe.title}</b>
+                                <p className="heading-text-level2">Ratings</p>
+                            </div>
+                        ))
+                    )
+                }
+            </Container>
         </>
     )
 }

@@ -17,8 +17,10 @@
                 "Ingredient 1",
                 "Ingredient 2"
             ],
-            "directions": "test test test test..",
+            "directions": "proven and experienced React JS developer, excelling in independent and collaborative projects, leading end-to-end feature development with a focus on quality, performance and security. Skilled in coordinating with cross-functional teams for seamless integration and communication.",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -29,8 +31,10 @@
                 "Ingredient 1",
                 "Ingredient 2"
             ],
-            "directions": "test test test test..",
+            "directions":"proven and experienced React JS developer, excelling in independent and collaborative projects, leading end-to-end feature development with a focus on quality, performance and security. Skilled in coordinating with cross-functional teams for seamless integration and communication.",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -43,6 +47,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -55,6 +61,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -67,6 +75,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Snaks",
             "rating":0,
             "votes":0
         },
@@ -79,6 +89,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -91,6 +103,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Deserts",
             "rating":0,
             "votes":0
         },
@@ -103,6 +117,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Non-veg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -115,6 +131,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -127,6 +145,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Nonveg",
+            "subCategory": "Sandwich",
             "rating":0,
             "votes":0
         },
@@ -139,6 +159,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Smoothies",
             "rating":0,
             "votes":0
         },
@@ -151,6 +173,8 @@
             ],
             "directions": "test test test test..",
             "author":"admin",
+            "category": "Veg",
+            "subCategory": "Salads",
             "rating":0,
             "votes":0
         }   

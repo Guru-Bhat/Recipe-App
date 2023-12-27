@@ -12,12 +12,13 @@ export const recipeApi=createApi({
         }),
 
         getRecipesById: builder.query({
-            query: (id)=> `/recipesList/${id}`
+            query: (id)=> `/recipesList/${id}`,
+            providesTags: ['recipesList']
         }),
 
         editRecipe: builder.query({
             query: ()=> ``,
-            providesTags: ['recipesList']  // Indicates that this will return a collection of entities
+            providesTags: ['recipesList'] 
         })
     })
 })
