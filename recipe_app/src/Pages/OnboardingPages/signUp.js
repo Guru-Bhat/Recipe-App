@@ -74,7 +74,7 @@ else{
                         <Input className='form-control signup-input' placeholder='email*' type='text' name='email' value={email} maxLength={30} onChange={(e)=>handleInputField(e,'email')} />
                         {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label> */}
                         { !isValidEmail && 
-                            <p>{errorMessage}</p> 
+                            <p className='errorMessage'>{errorMessage}</p> 
                         }
                     </FormGroup>
 

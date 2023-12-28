@@ -5,6 +5,7 @@
         color: $header-text-color;
         font-size: 1.5rem;
         padding: 2rem 0 1rem 0;
+        margin: 0;
     }
 
 
@@ -36,8 +37,7 @@
     min-width: 0;
     background-color: #fff;
     background-clip: border-box;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 5px auto 5px auto;
     padding-top: 30px;
     width: 400px;
 
@@ -55,17 +55,10 @@
     min-width: 0;
     background-color: #fff;
     background-clip: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 2px;
-    width: 95%;
-
-    border: 1px solid rgb(196, 188, 179);
-    // padding-left: 50px;
-    // padding-right: 50px;
-    // padding-bottom: 50px;
-    // margin-top: 2rem;
-    
+    margin: 5px auto 5px auto;
+    width: 150px;
+border-radius: 10px 10px 10px 10px;
+    border: 1px solid rgb(196, 188, 179);    
 }
 
 .btn-active{
@@ -115,4 +108,9 @@
 .center-item{
     display: flex;
     justify-content: center;
+}
+
+.errorMessage{
+    color: $errorMessageTextColor;
+    font-size: $errorMessgaeFontSize;
 }
