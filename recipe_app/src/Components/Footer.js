@@ -3,7 +3,7 @@ export default function Footer(){
     return(
         <div className="footer">
             <div >
-            <a  className="links" href='/recipe/' >Home </a>
+            <a  className="links" href='/recipe/displayrecipes' >Home </a>
             </div>
             
             <div>

@@ -86,13 +86,15 @@ border-radius: 10px 10px 10px 10px;
 }
 
 .navBar{
-    background-color: #f6f5f8;
+    background-color: white;
     border-bottom: 2px solid $navbar-border-color;
-    padding: 20px 5px 20px 5px;
+    padding: 10px 5px 10px 5px;
+    height:50px;
 }
 
 .logo{
-    width: 10%;
+    width: 12%;
+    height: 50px;
 }
 
 .footer{
@@ -113,4 +115,15 @@ border-radius: 10px 10px 10px 10px;
 .errorMessage{
     color: $errorMessageTextColor;
     font-size: $errorMessgaeFontSize;
+}
+
+.profileDropdown{
+   display: flex;
+   flex-wrap: wrap;
+   float: right;
+   justify-content: center;
+   align-items: center;
+border-radius: 50%!important;
+height: 50px;
+width: 50px;
 }

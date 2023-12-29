@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useGetRecipesQuery, useGetRecipesByIdQuery } from "../../Redux/apiSlice"
 import '../../Assets/Styles/common.scss'
 import '../../Assets/Styles/recipeDetails.scss'
-import { getImage } from "../../customHooks/GetImage";
+import { getRecipeImage } from "../../customHooks/GetImage";
 import { useNavigate } from 'react-router-dom';
 import routes from "../../Routes/RoutesList";
 
@@ -41,7 +41,7 @@ export default function RecipeDetails() {
                     <div className="recipe-details">
                         <p className="heading-text-level1"> <b >{recipe.title} ({recipe.rating})</b> |  {recipe.category} | {recipe.subCategory} </p>
                         <div className="">
-                            <img alt={recipe.title} src={getImage(recipe.title)} className="recipe-image"></img>
+                            <img alt={recipe.title} src={getRecipeImage(recipe.title)} className="recipe-image"></img>
                         </div>
                         {/* <hr /> */}
                         <br />
@@ -60,7 +60,7 @@ export default function RecipeDetails() {
                         latestRecipes.map((recipe) => (
                             <div className="side-column-card" onClick={() => showRecipeDetails(recipe.id)}>
                                 {/* <div className="center-item"> */}
-                                <img alt={recipe.title} src={getImage(recipe.title)} className="latest-recipe-image"></img>
+                                <img alt={recipe.title} src={getRecipeImage(recipe.title)} className="latest-recipe-image"></img>
                                 {/* </div> */}
                                 <b className="heading-text-level2">{recipe.title}</b>
                             </div>

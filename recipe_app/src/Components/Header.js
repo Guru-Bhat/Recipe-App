@@ -14,6 +14,7 @@ import {
   } from 'reactstrap';
 import logo from '../Assets/images/logo.PNG'
 import '../Assets/Styles/common.scss'
+import UserProfile from "./UserProfile"
 
 export default function Header(){
     return(
@@ -21,9 +22,9 @@ export default function Header(){
             <Navbar >
                 <div className='navBar'>
                 <img alt='logo' src={logo} className='logo' ></img>
-                <div style={{display:'inline-block'}}>
                     {/* <p>profile dropdown</p> */}
-                </div>
+                    <UserProfile />
+               
                 </div>
             </Navbar>
             
