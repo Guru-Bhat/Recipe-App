@@ -2,7 +2,6 @@
     "userData": [
         {
             "id": 1,
-            "name": "Test",
             "userName": "admin",
             "email": "admin@recipe.com",
             "password": "admin1234",

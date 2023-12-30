@@ -1,7 +1,8 @@
 import SignUp from '../Pages/OnboardingPages/signUp'
 import SignIn from '../Pages/OnboardingPages/signIn'
-import DisplayRecipes from '../Pages/RecipePages/DisplayRecipes'
+import HomePage from '../Pages/RecipePages/HomePage'
 import RecipeDetails from '../Pages/RecipePages/RecipeDetails'
+import UserAccountPage from '../Pages/AccountPages/UserAccountPage'
 
 
 const routes={
@@ -11,12 +12,14 @@ const routes={
     signIn: SignIn,
     sign_in: "/recipe/signin",
 
-    displayRecipes: DisplayRecipes,
-    display_recipes: "/recipe/displayrecipes",
+    homePage: HomePage,
+    home_page: "/recipe/homepage",
 
     recipeDetails: RecipeDetails,
-    recipe_details:"/recipe/recipedetails"
+    recipe_details:"/recipe/recipedetails",
     
+    userAccountPage: UserAccountPage,
+    user_account_page: "/recipe/myaccount"
 }
 
 export default routes;

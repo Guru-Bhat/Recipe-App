@@ -1,0 +1,45 @@
+.wide-card{
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    margin: 5px auto 5px auto;
+    padding: 10px 10px 10px 10px;
+    width: 95%;
+
+    border: 1px solid rgb(196, 188, 179);
+    margin-top: 2rem;
+}
+
+.small-image{
+    width: 150px;
+    height: 100px;
+}
+
+.table-container {
+    max-height: 350px; 
+    overflow-y: auto ; 
+  }
+
+  .table-row{
+    height: 85px;
+    border: 2px solid rgb(170, 164, 164)!important;
+    margin: 1px 0 10px 0;
+  }
+
+  
+td{
+    vertical-align: middle;
+    text-align: center;
+    width: 200px;
+}
+
+.small-image{
+    height: 80px;
+    width: 150px;
+    // margin: 2px 2px 2px 2px;
+    vertical-align: middle;
+    text-align: center;
+}

@@ -43,7 +43,7 @@ else{
 }
 
    const submitFormHandler=(e)=>{
-    navigate(routes.display_recipes);
+    navigate(routes.home_page);
    }
 
    

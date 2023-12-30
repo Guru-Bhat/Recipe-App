@@ -6,41 +6,41 @@ import Avatar from '@mui/material/Avatar';
 import { getProfileImage } from "../customHooks/GetImage"
 
 export default function UserProfile() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [open, setOpen] = React.useState(null);
+  const isOpen = Boolean(open);
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setOpen(event.currentTarget);
   };
   const handleClose = () => {
-    setAnchorEl(null);
+    setOpen(null);
   };
+
+  const navigateToMyAccount=()=>{
+    window.location.href="/recipe/myaccount";
+  }
+
+  const logoutHandler=()=>{
+
+  }
 
   return (
     <>
-    <Avatar aria-controls={open ? 'basic-menu' : undefined}
+    <Avatar aria-controls={isOpen ? 'basic-menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={isOpen ? 'true' : undefined}
         onClick={handleClick}
         className='profileDropdown'></Avatar>
-      {/* <img src={getProfileImage("userName")}
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        className='profileDropdown'
-      /> */}
       <Menu
         id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
+        anchorEl={open}
+        open={isOpen}
         onClose={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={navigateToMyAccount}>My account</MenuItem>
+        <MenuItem onClick={logoutHandler}>Logout</MenuItem>
       </Menu>
     </>
   );
