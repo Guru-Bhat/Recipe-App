@@ -16,11 +16,32 @@ export const recipeApi=createApi({
             providesTags: ['recipesList']
         }),
 
-        editRecipe: builder.query({
-            query: ()=> ``,
-            providesTags: ['recipesList'] 
-        })
+        addRecipe: builder.mutation({
+            query: (recipe)=> ({
+                url: `/recipesList/`,
+                method: 'POST',
+                body: recipe
+            }),
+            invalidatesTags: ['recipesList'] 
+        }),
+
+        editRecipe: builder.mutation({
+            query: (recipe)=> ({
+                url: `/recipesList/${recipe.id}`,
+                method: 'PATCH',
+                body: recipe
+            }),
+            invalidatesTags: ['recipesList'] 
+        }),
+        deleteRecipe: builder.mutation({
+            query: ({id})=> ({
+                url: `/recipesList/${id}`,
+                method: 'DELETE',
+                body: id
+            }),
+            invalidatesTags: ['recipesList'] 
+        }),
     })
 })
 
-export const {useGetRecipesQuery, useGetRecipesByIdQuery, useEditRecipeMutation}= recipeApi
+export const {useGetRecipesQuery, useGetRecipesByIdQuery,useAddRecipeMutation, useEditRecipeMutation, useDeleteRecipeMutation}= recipeApi

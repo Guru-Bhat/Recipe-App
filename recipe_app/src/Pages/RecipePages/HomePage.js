@@ -15,6 +15,9 @@ export default function HomePage() {
     const [filteredData, setFilteredData]= useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const isLoggedIn= useSelector(state=>state.session.login);
+console.log("isLoggedIn",isLoggedIn);
+
 
     const searchHandle=(searchValue)=>{
         console.log("searchValue",searchValue);
