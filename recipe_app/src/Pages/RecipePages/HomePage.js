@@ -16,7 +16,10 @@ export default function HomePage() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const isLoggedIn= useSelector(state=>state.session.login);
-console.log("isLoggedIn",isLoggedIn);
+    const userName= useSelector(state=>state.session.userName);
+    const isAdmin= useSelector(state=>state.session.isAdmin);
+    const email= useSelector(state=>state.session.email);
+console.log("isLoggedIn",isLoggedIn, userName,email, isAdmin);
 
 
     const searchHandle=(searchValue)=>{

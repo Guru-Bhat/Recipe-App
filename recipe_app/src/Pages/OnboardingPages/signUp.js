@@ -12,21 +12,25 @@ import {setLogin, setUserName, setEmail,setIsAdmin} from '../../Redux/sessionDat
 export default function SignUp() {
     let [fullName, setfullName] = useState('')
     let [mobleNumber, setmobleNumber] = useState(null)
-    let [email, setEmail] = useState('')
+    let [email, setMail] = useState('')
     let [isProcessing, setIsProcessing] = useState(false)
     let [isValidEmail, setIsValidEmail] = useState()
     let [errorMessage, setErrorMessage] = useState()
+    let [isButtonDisabled, setIsButtonDisabled] = useState(true)
 
     const navigate = useNavigate();
 const dispatch=useDispatch();
+
     const handleInputField = (e) => {
+        
+        console.log("inputs",e.target.value, isButtonDisabled)
         if (e.target.name === 'fullName') {
             setfullName(e.target.value)
         }
         else {
             let newEmail = e.target.value
-            console.log("newEmail", newEmail)
-            setEmail(newEmail);
+            // console.log("newEmail", newEmail)
+            setMail(newEmail);
             if (newEmail.length > 0) {
                 let isValidEmail = validateEmail(newEmail)
                 if (isValidEmail) {
@@ -42,10 +46,18 @@ const dispatch=useDispatch();
                 setErrorMessage("")
             }
         }
+
+        if(fullName && email && isValidEmail){
+            setIsButtonDisabled(false)
+        }
     }
 
     const submitFormHandler = (e) => {
         dispatch(setLogin(true));
+        dispatch(setUserName(fullName));
+        dispatch(setEmail(email));
+        dispatch(setIsAdmin(false));
+        
         navigate(routes.home_page);
     }
 
@@ -81,10 +93,7 @@ const dispatch=useDispatch();
                             }
                         </FormGroup>
 
-                        <Button type="submit" className={fullName && email && isValidEmail ?
-                            "btn-active" :
-                            "btn-disabled"
-                        } >
+                        <Button type="submit" disabled= {isButtonDisabled} className={isButtonDisabled ?"btn-disabled" : "btn-active"} >
                             <p className='btn-text'>Next</p></Button>
 
                     </Form>
