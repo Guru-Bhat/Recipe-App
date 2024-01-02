@@ -16,6 +16,11 @@ export const recipeApi=createApi({
             providesTags: ['recipesList']
         }),
 
+        getRecipesByEmail: builder.query({
+            query: (email)=> `/recipesList/${email}`,
+            providesTags:['email']
+        }),
+
         addRecipe: builder.mutation({
             query: (recipe)=> ({
                 url: `/recipesList/`,
@@ -41,7 +46,22 @@ export const recipeApi=createApi({
             }),
             invalidatesTags: ['recipesList'] 
         }),
+
+        getUserDataByEmail: builder.query({
+            query: (email)=> `/userData/${email}`,
+            providesTags:['email' ]
+        }),
+
+        createUser: builder.mutation({
+            query: ({userData})=> ({
+                url: `/userData/`,
+                method: 'POST',
+                body: userData
+            }),
+            invalidatesTags: ['userData'] 
+        }),
+        
     })
 })
 
-export const {useGetRecipesQuery, useGetRecipesByIdQuery,useAddRecipeMutation, useEditRecipeMutation, useDeleteRecipeMutation}= recipeApi
+export const {useGetRecipesQuery, useGetRecipesByIdQuery, useGetRecipesByEmailQuery, useAddRecipeMutation, useEditRecipeMutation, useDeleteRecipeMutation, useGetUserDataByEmailQuery, useCreateUserMutation}= recipeApi

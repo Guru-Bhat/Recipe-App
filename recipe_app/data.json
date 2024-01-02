@@ -1,182 +1,251 @@
 {
-    "userData": [
-        {
-            "id": 1,
-            "userName": "admin",
-            "email": "admin@recipe.com",
-            "password": "admin1234",
-            "role": "admin"
-        }
-    ],
-    "recipesList": [
-        {
-            "id": 1,
-            "title": "Recipe1",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 2,
-            "title": "Recipe2",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 3,
-            "title": "Recipe3",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 4,
-            "title": "Recipe4",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 5,
-            "title": "Recipe5",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Snaks",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 6,
-            "title": "Recipe6",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 7,
-            "title": "Recipe7",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Deserts",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 8,
-            "title": "Recipe8",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Non-veg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 9,
-            "title": "Recipe9",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 10,
-            "title": "Recipe10",
-            "ingredients": [
-                "Ingredient 10",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Nonveg",
-            "subCategory": "Sandwich",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 11,
-            "title": "Recipe11",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Smoothies",
-            "rating":0,
-            "votes":0
-        },
-        {
-            "id": 12,
-            "title": "Recipe12",
-            "ingredients": [
-                "Ingredient 1",
-                "Ingredient 2"
-            ],
-            "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-            "author":"admin",
-            "category": "Veg",
-            "subCategory": "Salads",
-            "rating":0,
-            "votes":0
-        }   
-        
-    ]
+  "userData": [
+    {
+      "id": "admin@recipe.com",
+      "userName": "admin",
+      "email": "admin@recipe.com",
+      "password": "admin1234",
+      "role": "admin"
+    },
+    {
+      "userName": "test",
+      "email": "test@test.com",
+      "password": "qwerty78e",
+      "role": "User",
+      "id": "test@test.com"
+    },
+    {
+      "userName": "test2",
+      "email": "test2@test.com",
+      "password": "q1w23er45",
+      "role": "User",
+      "id": "test2@test.com"
+    },
+    {
+      "userName": "dd",
+      "email": "pp@dd.ll",
+      "password": "kyuiyfgjdfyhd",
+      "role": "User",
+      "id": "test2@test.com"
+    },
+    {
+      "userName": "ss",
+      "email": "test09@test.com",
+      "password": "qwertyuio",
+      "role": "User",
+      "id": "o4gpdZi"
+    },
+    {
+      "userName": "aa",
+      "email": "test2@test.com",
+      "password": "ssssssssssssssssssssss",
+      "role": "User",
+      "id": "zFE-WXb"
+    },
+    {
+      "userName": "sssss",
+      "email": "test2@test.com",
+      "password": "ssssssssss",
+      "role": "User",
+      "id": "I7zmop_"
+    },
+    {
+      "userName": "ss",
+      "email": "test2@test.com",
+      "password": "dddddddsss",
+      "role": "User",
+      "id": "FP0wBxg"
+    },
+    {
+      "userName": "oooooo",
+      "email": "oooooo@oo.com",
+      "password": "oooooooooooooooooooooooooooooooo",
+      "role": "User",
+      "id": "gYoYRp5"
+    },
+    {
+      "userName": "aa",
+      "email": "a@a.com",
+      "password": "aaaaaaaaaaaaaaaa",
+      "role": "User",
+      "id": "yPvaBWA"
+    },
+    {
+      "userName": "dd",
+      "email": "dd@dd.com",
+      "password": "kkkkkkkkkkkkkkkk",
+      "role": "User",
+      "id": "YuS3H0l"
+    }
+  ],
+  "recipesList": [
+    {
+      "id": 1,
+      "title": "Recipe1",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 2,
+      "title": "Recipe2",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 3,
+      "title": "Recipe3",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "test2@test.com",
+      "category": "Veg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 4,
+      "title": "Recipe4",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 5,
+      "title": "Recipe5",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Snaks",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 6,
+      "title": "Recipe6",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 7,
+      "title": "Recipe7",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Deserts",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 8,
+      "title": "Recipe8",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Non-veg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 9,
+      "title": "Recipe9",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 10,
+      "title": "Recipe10",
+      "ingredients": [
+        "Ingredient 10",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Nonveg",
+      "subCategory": "Sandwich",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 11,
+      "title": "Recipe11",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Smoothies",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 12,
+      "title": "Recipe12",
+      "ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
+      "author": "admin",
+      "category": "Veg",
+      "subCategory": "Salads",
+      "rating": 0,
+      "votes": 0
+    }
+  ]
 }

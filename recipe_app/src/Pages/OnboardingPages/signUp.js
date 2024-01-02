@@ -7,7 +7,8 @@ import '../../Assets/Styles/signUpPage.scss'
 import validateEmail from '../../customHooks/SignInSignUpHooks'
 import routes from '../../Routes/RoutesList'
 import { useDispatch } from 'react-redux';
-import {setLogin, setUserName, setEmail,setIsAdmin} from '../../Redux/sessionDataSlice'
+import { setLogin, setUserName, setEmail, setRole } from '../../Redux/sessionDataSlice'
+import { useCreateUserMutation } from '../../Redux/apiSlice'
 
 export default function SignUp() {
     let [fullName, setfullName] = useState('')
@@ -15,54 +16,84 @@ export default function SignUp() {
     let [email, setMail] = useState('')
     let [isProcessing, setIsProcessing] = useState(false)
     let [isValidEmail, setIsValidEmail] = useState()
-    let [errorMessage, setErrorMessage] = useState()
+    let [errorMessageEmail, setErrorMessageEmail] = useState()
     let [isButtonDisabled, setIsButtonDisabled] = useState(true)
+    let [password, setPassword] = useState('')
+    let [isValidPassword, setIsValidPassword] = useState(false)
+    let [errorMessagePwd, setErrorMessagePwd] = useState()
+    const [createUser] = useCreateUserMutation();
 
     const navigate = useNavigate();
-const dispatch=useDispatch();
+    const dispatch = useDispatch();
 
     const handleInputField = (e) => {
-        
-        console.log("inputs",e.target.value, isButtonDisabled)
+
+        console.log("inputs", e.target.value, isButtonDisabled)
         if (e.target.name === 'fullName') {
             setfullName(e.target.value)
         }
-        else {
+        else if (e.target.name === 'email') {
             let newEmail = e.target.value
             // console.log("newEmail", newEmail)
             setMail(newEmail);
-            if (newEmail.length > 0) {
-                let isValidEmail = validateEmail(newEmail)
-                if (isValidEmail) {
-                    setIsValidEmail(true)
-                    setErrorMessage("")
-                }
-                else {
-                    setErrorMessage("Invalid email")
-                }
+            let isValidEmail = validateEmail(newEmail)
+            if (isValidEmail) {
+                console.log("isValidEmail", isValidEmail)
+                setIsValidEmail(true)
+                setErrorMessageEmail("")
+                console.log("isValidEmail inside condition", isValidEmail)
             }
-
+            else if (newEmail.length > 0 && !isValidEmail) {
+                console.log("isValidEmail inside condition", isValidEmail)
+                setErrorMessageEmail("Invalid email")
+            }
             else {
-                setErrorMessage("")
+                setErrorMessageEmail("")
             }
         }
 
-        if(fullName && email && isValidEmail){
+        else {
+            let password = e.target.value
+            let isValidPassword = password.length > 7;
+            setIsValidPassword(isValidPassword)
+            console.log("isValidPassword", isValidPassword)
+            if (isValidPassword) {
+                setPassword(password);
+                setErrorMessagePwd("")
+            }
+            else if (password.length > 0 && !isValidPassword) {
+                setErrorMessagePwd("Minimum 8 character is required")
+            }
+            else {
+                setErrorMessagePwd("")
+            }
+        }
+
+        if (fullName && email && isValidEmail && isValidPassword) {
             setIsButtonDisabled(false)
         }
     }
 
-    const submitFormHandler = (e) => {
+    const submitFormHandler = async (e) => {
+        e.preventDefault();
+        let userData={
+            userName: fullName,
+            email: email,
+            password: password,
+            role: "User"
+        }
+        console.log("userData",userData)
+        await createUser({userData})
+        console.log("user created")
         dispatch(setLogin(true));
         dispatch(setUserName(fullName));
         dispatch(setEmail(email));
-        dispatch(setIsAdmin(false));
-        
+        dispatch(setRole("User"));
+       
         navigate(routes.home_page);
-    }
-
-
-
+       
+    }  
+    
 
     return (
 
@@ -86,28 +117,32 @@ const dispatch=useDispatch();
                     </FormGroup> */}
 
                         <FormGroup className='form-group'>
-                            <Input className='form-control signup-input' placeholder='email*' type='text' name='email' value={email} maxLength={30} onChange={(e) => handleInputField(e, 'email')} />
+                            <Input className='form-control signup-input' placeholder='Email*' type='text' name='email' value={email} maxLength={30} onChange={(e) => handleInputField(e, 'email')} />
                             {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label> */}
                             {!isValidEmail &&
-                                <p className='errorMessage'>{errorMessage}</p>
+                                <p className='errorMessage'>{errorMessageEmail}</p>
                             }
                         </FormGroup>
 
-                        <Button type="submit" disabled= {isButtonDisabled} className={isButtonDisabled ?"btn-disabled" : "btn-active"} >
-                            <p className='btn-text'>Next</p></Button>
+                        <FormGroup className='form-group'>
+                            <Input className='form-control signup-input' placeholder='Password(Min 8 characters)*' type="password" name='password' onChange={(e) => handleInputField(e, 'password')} />
+                            {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label> */}
+                            {!isValidPassword &&
+                                <p className='errorMessage'>{errorMessagePwd}</p>
+                            }
+                        </FormGroup>
 
+                        <Button type="submit" disabled={isButtonDisabled} className={isButtonDisabled ? "btn-disabled" : "btn-active"} >
+                            <p className='btn-text'>Next</p></Button>
+                            <p>Already have an account?</p><a href='http://localhost:3001/recipe/signin'>SignIn</a>
                     </Form>
 
 
                 </div>
-
+              
             </Container>
 
 
-
-
         </div>
-
-
     )
 }

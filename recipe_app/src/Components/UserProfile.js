@@ -9,15 +9,17 @@ import { useSelector } from 'react-redux';
 export default function UserProfile() {
     const [open, setOpen] = React.useState(null);
     const isOpen = Boolean(open);
-    const [userName,setUserName]=useState('')
+    // const [userName,setUserName]=useState('')
 
-    const fullName=useSelector(state => state.session.userName)
+    const userName=useSelector(state => state.session.userName)
+    
 
     useEffect(
-        ()=>{setUserName(fullName)
-    }
+        ()=>{
+    },[userName]
     )
-    
+
+    console.log("userName",userName)
     
 
     const handleClick = (event) => {
@@ -32,14 +34,13 @@ export default function UserProfile() {
     }
 
     const logoutHandler = () => {
-        setUserName('');
+        // setUserName('');
         window.location.href = "/recipe/";
     }
 
     return (
          
         <>
-        
         
             <Avatar aria-controls={isOpen ? 'basic-menu' : undefined}
                 aria-haspopup="true"

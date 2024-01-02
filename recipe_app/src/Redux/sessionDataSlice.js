@@ -5,7 +5,7 @@ const initialState={
     userName:"",
     email:"",
     password:"",
-    isAdmin: false,
+    role:""
 }
 
 export const sessionDataSlice = createSlice({
@@ -24,12 +24,12 @@ export const sessionDataSlice = createSlice({
             state.email=action.payload;
         },
 
-        setIsAdmin: (state,action)=>{
+        setRole: (state,action)=>{
             state.isAdmin=action.payload;
         }
         }
     });
 
-    export const {setLogin, setUserName, setEmail,setIsAdmin} = sessionDataSlice.actions;
+    export const {setLogin, setUserName, setEmail,setRole} = sessionDataSlice.actions;
 
     export default sessionDataSlice.reducer;

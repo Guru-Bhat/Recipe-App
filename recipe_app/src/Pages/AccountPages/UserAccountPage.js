@@ -1,20 +1,26 @@
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { useGetRecipesQuery, useGetRecipesByIdQuery } from "../../Redux/apiSlice"
+import { useGetRecipesQuery, useGetRecipesByIdQuery, useGetRecipesByEmailQuery } from "../../Redux/apiSlice"
 import { getRecipeImage } from "../../customHooks/GetImage";
 import "../../Assets/Styles/userAccountPage.scss"
 import UserAccTable from "../../Components/UserAccTable"
 
 export default function UserAccountPage() {
     const { data, error, isLoading } = useGetRecipesQuery();
+    
     const [myRecipes, setMyRecipes] = useState('');
+    const email= useSelector(state=>state.session.email);
+    console.log("email",email)
 
+    const { data:recipesData, error: recipeDataError, isLoading: isrecipeDataLoading} = useGetRecipesQuery(email);
+    
     useEffect(() => {
-        if (data) {
+        if (recipesData) {
             // setMyRecipes(getMyRecipes(userName));
             // getMyRecipes("admin");
-           let myRecipes= data.filter((recipe)=>recipe.author === "admin")   
-           setMyRecipes(myRecipes); 
+        //    let myRecipes= data.filter((recipe)=>recipe.author === email)   
+        console.log("recipesData",recipesData)
+           setMyRecipes(recipesData); 
         }
     }, [data])
 
