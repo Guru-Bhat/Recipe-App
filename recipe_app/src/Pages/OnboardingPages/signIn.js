@@ -29,6 +29,11 @@ export default function SignIn(){
     const dispatch = useDispatch();
 
     useEffect(()=>{
+        dispatch(setLogin(false));
+        dispatch(setUserName(''));
+        dispatch(setEmail(''));
+        dispatch(setRole(''));
+        sessionStorage.clear("userData")
     },[email])
     
 
@@ -61,15 +66,34 @@ export default function SignIn(){
     }
 
     const submitFormHandler = async (e) => {
+        console.log("data", data)
         e.preventDefault();
-        if(data.length>0){
+        if(data){
             let isValidLogin= data.password===password
             setIsValidLogin(isValidLogin)
             setErrorMessage("")
         console.log("isValidLogin", isValidLogin)
         console.log("data", data)
         
-        if(!isValidLogin){
+
+        if(isValidLogin){
+            dispatch(setLogin(true));
+            dispatch(setUserName(data.userName));
+            dispatch(setEmail(data.email));
+            dispatch(setRole(data.role));
+        
+            const userData={
+                isLoggedIn:true,
+                userName:data.userName,
+                email:data.email,
+                role:data.role
+            }
+            sessionStorage.setItem("userData",JSON.stringify(userData))
+        
+            navigate(routes.home_page)
+        }
+        else{
+            console.log("Invalid credentials")
             setErrorMessagePwd("Please enter valid password")
         }
     }
@@ -77,26 +101,19 @@ export default function SignIn(){
         setErrorMessage("Please enter valid credentials")
     }
 
-    dispatch(setLogin(true));
-    dispatch(setUserName(data.fullName));
-    dispatch(setEmail(data.email));
-    dispatch(setRole(data.role));
-
-    // navigate(routes.home_page,{
-    //     state: { userData:data }
-    // });
-
-    navigate(routes.home_page)
+    
     }
 
     return(
         <>
         <div className="background-color">
+        {isProcessing ?
+        <Loader show={isProcessing} />
+        :
             <Container className="container">
-                <Loader show={isProcessing} />
                {error && <p className='errorMessage'>{errorMessage}</p>} 
                 <div className='card'>
-                    <b className='heading-text-level1'>Sign Up</b>
+                    <b className='heading-text-level1'>Sign In</b>
                     <Form onSubmit={(e) => submitFormHandler(e)} autoComplete='off'>
                        
                         <FormGroup className='form-group'>
@@ -117,10 +134,11 @@ export default function SignIn(){
 
                         <Button type="submit" disabled={isButtonDisabled} className={isButtonDisabled ? "btn-disabled" : "btn-active"} >
                             <p className='btn-text'>Next</p></Button>
-                            <p>New user?</p><a href='http://localhost:3001/recipe/signup'>Sign UP</a>
+                            <p className='center-item' onClick={()=>setIsProcessing(true)}>New user?<a href='/recipe/signup'>Sign UP</a></p>
                     </Form>
                     </div>
                     </Container>
+}
                     </div>
         </>
     )

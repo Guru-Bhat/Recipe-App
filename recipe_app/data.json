@@ -76,32 +76,44 @@
       "password": "kkkkkkkkkkkkkkkk",
       "role": "User",
       "id": "YuS3H0l"
+    },
+    {
+      "userName": "cc",
+      "email": "cc@cc.com",
+      "password": "ccccccccc",
+      "role": "User",
+      "id": "rkUpILo"
+    },
+    {
+      "userName": "aa",
+      "email": "aa@aa.aas.com",
+      "password": "asdfghhjk",
+      "role": "User",
+      "id": "xB5BaLM"
+    },
+    {
+      "userName": "guru",
+      "email": "guru@gmail.com",
+      "password": "Test@1234",
+      "role": "User",
+      "id": "1tzoOUo"
+    },
+    {
+      "userName": "Guru",
+      "email": "guru@gmail.com",
+      "password": "test1234",
+      "role": "User",
+      "id": "drS_1su"
     }
   ],
   "recipesList": [
     {
       "id": 1,
-      "title": "Recipe1",
-      "ingredients": [
-        "Ingredient 1",
-        "Ingredient 2"
-      ],
+      "title": "Recipe00001",
+      "ingredients": "Ingredient 1,Ingredient 02",
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
-      "category": "Veg",
-      "subCategory": "Sandwich",
-      "rating": 0,
-      "votes": 0
-    },
-    {
-      "id": 2,
-      "title": "Recipe2",
-      "ingredients": [
-        "Ingredient 1",
-        "Ingredient 2"
-      ],
-      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "test@test.com",
+      "email": "test@test.com",
       "category": "Veg",
       "subCategory": "Sandwich",
       "rating": 0,
@@ -116,6 +128,7 @@
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
       "author": "test2@test.com",
+      "email": "test2@test.com",
       "category": "Veg",
       "subCategory": "Sandwich",
       "rating": 0,
@@ -129,7 +142,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "admin@admin.com",
+      "email": "admin@admin.com",
       "category": "Veg",
       "subCategory": "Sandwich",
       "rating": 0,
@@ -143,7 +157,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "admin@admin.com",
+      "email": "admin@admin.com",
       "category": "Veg",
       "subCategory": "Snaks",
       "rating": 0,
@@ -157,7 +172,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "admin@admin.com",
+      "email": "admin@admin.com",
       "category": "Veg",
       "subCategory": "Sandwich",
       "rating": 0,
@@ -171,7 +187,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "admin@admin.com",
+      "email": "admin@admin.com",
       "category": "Veg",
       "subCategory": "Deserts",
       "rating": 0,
@@ -185,7 +202,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "admin@admin.com",
+      "email": "admin@admin.com",
       "category": "Non-veg",
       "subCategory": "Sandwich",
       "rating": 0,
@@ -199,7 +217,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "admin@admin.com",
+      "email": "admin@admin.com",
       "category": "Veg",
       "subCategory": "Sandwich",
       "rating": 0,
@@ -213,7 +232,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "admin@admin.com",
+      "email": "admin@admin.com",
       "category": "Nonveg",
       "subCategory": "Sandwich",
       "rating": 0,
@@ -227,7 +247,8 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "username@test.com",
+      "email": "username@test.com",
       "category": "Veg",
       "subCategory": "Smoothies",
       "rating": 0,
@@ -241,11 +262,140 @@
         "Ingredient 2"
       ],
       "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "admin",
+      "author": "username@test.com",
+      "email": "username@test.com",
       "category": "Veg",
       "subCategory": "Salads",
       "rating": 0,
       "votes": 0
-    }
+    },
+    {
+      "title": "recipe01",
+      "ingredients": "a, s, d , f, g",
+      "directions": "aaaaaaaaa sssssssss ddddddd ffffffff gggggggggggggg hhhhhhh dd ffgg hh",
+      "author": "Guru",
+      "email": "guru@gmail.com",
+      "category": "Veg",
+      "subCategory": "NA",
+      "rating": 0,
+      "votes": 0,
+      "id": 13
+    },
+    {
+      "title": "biryani",
+      "ingredients": "Rice, Masala, etc",
+      "directions": "sfkjk jsdk gfhik hfiwsf fffffffffffff, ffnj afkdjhoiaf afkhns iugd fswqrn polpifmn",
+      "author": "Guru",
+      "email": "guru@gmail.com",
+      "category": "Veg",
+      "subCategory": "Indian dish",
+      "rating": 0,
+      "votes": 0,
+      "id": 14
+    },
+      {
+        "id": 1,
+        "title": "Mango Salsa Chicken",
+        "ingredients": [
+          "Boneless chicken breast",
+          "Mango",
+          "Red onion",
+          "Cilantro",
+          "Lime",
+          "Salt",
+          "Pepper"
+        ],
+        "directions": "Season chicken with salt and pepper. Grill until cooked. Dice mango, red onion, and cilantro. Mix diced ingredients with lime juice. Serve grilled chicken topped with mango salsa.",
+        "author": "Guru",
+        "email": "guru@gmail.com",
+        "category": "Main Course",
+        "subCategory": "Grilled",
+        "rating": 0,
+        "votes": 0
+      },
+      {
+        "id": 2,
+        "title": "Vegetarian Pasta Primavera",
+        "ingredients": [
+          "Penne pasta",
+          "Broccoli",
+          "Carrots",
+          "Bell peppers",
+          "Cherry tomatoes",
+          "Olive oil",
+          "Garlic",
+          "Parmesan cheese"
+        ],
+        "directions": "Boil pasta until al dente. Sauté vegetables in olive oil and garlic. Toss cooked pasta with sautéed vegetables. Sprinkle with Parmesan cheese before serving.",
+        "author": "Guru",
+        "email": "guru@gmail.com",
+        "category": "Vegetarian",
+        "subCategory": "Pasta",
+        "rating": 0,
+        "votes": 0
+      },
+      {
+        "id": 3,
+        "title": "Spicy Shrimp Tacos",
+        "ingredients": [
+          "Shrimp",
+          "Taco shells",
+          "Cabbage",
+          "Avocado",
+          "Lime",
+          "Cilantro",
+          "Sour cream",
+          "Hot sauce"
+        ],
+        "directions": "Season shrimp with spices and grill. Assemble tacos with grilled shrimp, shredded cabbage, sliced avocado, lime, and cilantro. Top with sour cream and hot sauce.",
+        "author": "Guru",
+        "email": "guru@gmail.com",
+        "category": "Seafood",
+        "subCategory": "Tacos",
+        "rating": 0,
+        "votes": 0
+      },
+      {
+        "id": 4,
+        "title": "Classic Chocolate Chip Cookies",
+        "ingredients": [
+          "All-purpose flour",
+          "Butter",
+          "Brown sugar",
+          "Granulated sugar",
+          "Eggs",
+          "Vanilla extract",
+          "Baking soda",
+          "Chocolate chips"
+        ],
+        "directions": "Cream butter and sugars. Add eggs and vanilla. Mix in dry ingredients. Fold in chocolate chips. Drop dough onto baking sheets. Bake until golden brown.",
+        "author": "Guru",
+        "email": "guru@gmail.com",
+        "category": "Dessert",
+        "subCategory": "Cookies",
+        "rating": 0,
+        "votes": 0
+      },
+      {
+        "id": 5,
+        "title": "Caprese Salad",
+        "ingredients": [
+          "Tomatoes",
+          "Fresh mozzarella",
+          "Basil leaves",
+          "Balsamic glaze",
+          "Olive oil",
+          "Salt",
+          "Pepper"
+        ],
+        "directions": "Slice tomatoes and mozzarella. Arrange on a plate with fresh basil leaves. Drizzle with balsamic glaze and olive oil. Season with salt and pepper.",
+        "author": "Guru",
+        "email": "guru@gmail.com",
+        "category": "Salad",
+        "subCategory": "Caprese",
+        "rating": 0,
+        "votes": 0
+      }
+    
   ]
 }

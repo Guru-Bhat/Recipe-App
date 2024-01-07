@@ -24,7 +24,7 @@ export default function SearchBar(props){
   };
 
   return (
-    <div>
+    <div className="center-searchbar">
       <input
         type="text"
         placeholder="Search recipe"

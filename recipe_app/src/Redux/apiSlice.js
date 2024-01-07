@@ -17,7 +17,7 @@ export const recipeApi=createApi({
         }),
 
         getRecipesByEmail: builder.query({
-            query: (email)=> `/recipesList/${email}`,
+            query: (email) => `/recipesList?email=${email}`,
             providesTags:['email']
         }),
 
@@ -38,6 +38,7 @@ export const recipeApi=createApi({
             }),
             invalidatesTags: ['recipesList'] 
         }),
+        
         deleteRecipe: builder.mutation({
             query: ({id})=> ({
                 url: `/recipesList/${id}`,
@@ -49,7 +50,7 @@ export const recipeApi=createApi({
 
         getUserDataByEmail: builder.query({
             query: (email)=> `/userData/${email}`,
-            providesTags:['email' ]
+            providesTags:['email']
         }),
 
         createUser: builder.mutation({

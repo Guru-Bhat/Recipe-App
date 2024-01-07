@@ -9,6 +9,7 @@ import routes from '../../Routes/RoutesList'
 import { useDispatch } from 'react-redux';
 import { setLogin, setUserName, setEmail, setRole } from '../../Redux/sessionDataSlice'
 import { useCreateUserMutation } from '../../Redux/apiSlice'
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function SignUp() {
     let [fullName, setfullName] = useState('')
@@ -89,7 +90,9 @@ export default function SignUp() {
         dispatch(setUserName(fullName));
         dispatch(setEmail(email));
         dispatch(setRole("User"));
-       
+
+        sessionStorage.setItem("userData",JSON.stringify(userData))
+        
         navigate(routes.home_page);
        
     }  
@@ -98,9 +101,12 @@ export default function SignUp() {
     return (
 
         <div className="background-color">
+             {isProcessing ?
+            //  <CircularProgress/>
+            <Loader show={isProcessing} />
+             :
             <Container className="container">
-                <Loader show={isProcessing} />
-
+                
                 <div className='card'>
                     <b className='heading-text-level1'>Sign Up</b>
                     <Form onSubmit={(e) => submitFormHandler(e)} autoComplete='off'>
@@ -134,13 +140,14 @@ export default function SignUp() {
 
                         <Button type="submit" disabled={isButtonDisabled} className={isButtonDisabled ? "btn-disabled" : "btn-active"} >
                             <p className='btn-text'>Next</p></Button>
-                            <p>Already have an account?</p><a href='http://localhost:3001/recipe/signin'>SignIn</a>
+                            <p className='center-item' onClick={()=>setIsProcessing(true)}>Already have an account?<a href='/recipe/signin'>SignIn</a></p>
                     </Form>
 
 
                 </div>
               
             </Container>
+}
 
 
         </div>

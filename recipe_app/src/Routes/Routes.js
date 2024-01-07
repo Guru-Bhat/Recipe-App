@@ -21,8 +21,12 @@ export default function Router() {
 
                 <Route exact path={routers.home_page} element={<routers.homePage />} />
                 <Route exact path={routers.recipe_details} element={<routers.recipeDetails />} />
-                <Route exact path={routers.user_account_page} element={<routers.userAccountPage />} />
 
+                <Route exact path={routers.user_account_page} element={<routers.userAccountPage />} />
+                <Route exact path={routers.add_recipe} element={<routers.addRecipe />} />
+                <Route exact path={routers.edit_recipe} element={<routers.editRecipe />} />
+                <Route exact path={routers.delete_recipe} element={<routers.deleteRecipe />} />
+                
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -1,6 +1,6 @@
 
 .searchBar{
-    margin: 30px auto 10px 20px;
+    margin: 30px 2px 10px 2px;
     width: 80%;
     height: 4rem;
     padding: 0 0 0 1.5rem;
@@ -9,10 +9,16 @@
 }
 
 .searchBarFocused{
-    margin: 30px auto 10px 20px;
+    margin: 30px 2px 10px 2px;
     width: 80%;
     height: 4rem;
     padding: 0 0 0 1.5rem;
     border-radius: 50px; 
     opacity: 0.4;
+}
+
+.center-searchbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

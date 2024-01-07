@@ -3,34 +3,39 @@ import { useSelector, useDispatch } from "react-redux"
 import { useGetRecipesQuery, useGetRecipesByIdQuery, useGetRecipesByEmailQuery } from "../../Redux/apiSlice"
 import { getRecipeImage } from "../../customHooks/GetImage";
 import "../../Assets/Styles/userAccountPage.scss"
-import UserAccTable from "../../Components/UserAccTable"
+import UsersRecipeTable from "../../Components/UsersRecipeTable"
+import { useNavigate } from "react-router-dom";
+import routes from "../../Routes/RoutesList";
+import Button from '@mui/material/Button';
 
 export default function UserAccountPage() {
-    const { data, error, isLoading } = useGetRecipesQuery();
-    
-    const [myRecipes, setMyRecipes] = useState('');
-    const email= useSelector(state=>state.session.email);
-    console.log("email",email)
 
-    const { data:recipesData, error: recipeDataError, isLoading: isrecipeDataLoading} = useGetRecipesQuery(email);
+
+    const userData = JSON.parse(sessionStorage.getItem("userData"))
+    const isLoggedIn = userData.isLoggedIn
+    const userName = userData.userName
+    const role = userData.role
+    const email = userData.email
+    console.log("userData",userData)
+    const { data: myRecipes, error: recipeDataError, isLoading: isrecipeDataLoading } = useGetRecipesByEmailQuery(email);
+    console.log("myRecipes",myRecipes,recipeDataError,isrecipeDataLoading)
     
-    useEffect(() => {
-        if (recipesData) {
-            // setMyRecipes(getMyRecipes(userName));
-            // getMyRecipes("admin");
-        //    let myRecipes= data.filter((recipe)=>recipe.author === email)   
-        console.log("recipesData",recipesData)
-           setMyRecipes(recipesData); 
-        }
-    }, [data])
+    const navigate = useNavigate();
+
+    const navigateToAddRecipePage=()=>{
+        navigate(routes.add_recipe)
+    }
 
 
     return (
-        <>
-            <h1>My account</h1>
-            <div>
-                <b>My Uploads</b>
-                <UserAccTable data={myRecipes} />
+        <div  className="">
+            <b className="heading-text-level1 center-item">My account</b>
+            <div className="myUploads">
+            
+            <div className="center-item">
+                <UsersRecipeTable data={myRecipes} />
+               
+               
                 {/* {data && myRecipes && myRecipes.map((recipe)=>(
                     <div className="wide-card">
                         <img src={getRecipeImage(recipe)} alt="" className="small-image"/>
@@ -38,9 +43,13 @@ export default function UserAccountPage() {
                     </div>
                 ))
 } */}
-
-<button>Add New Recipe</button>
+ </div>
             </div>
-        </>
+            <br/>
+            <div  className="center-item">
+            <Button variant="contained" color="success" className="center-item large-button"onClick={navigateToAddRecipePage}>Add New Recipe</Button>
+            </div>
+           
+        </div>
     )
 }

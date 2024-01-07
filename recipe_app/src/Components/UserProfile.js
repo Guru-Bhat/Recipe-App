@@ -1,68 +1,70 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import { getProfileImage } from "../customHooks/GetImage"
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import routes from '../Routes/RoutesList'
 
 export default function UserProfile() {
+    const navigate = useNavigate()
+
     const [open, setOpen] = React.useState(null);
     const isOpen = Boolean(open);
-    // const [userName,setUserName]=useState('')
 
-    const userName=useSelector(state => state.session.userName)
-    
+    const userName = useSelector(state => state.session.userName) || JSON.parse(sessionStorage.getItem("userData"))?.userName || ''
+
 
     useEffect(
-        ()=>{
-    },[userName]
+        () => {
+        }, [userName]
     )
 
-    console.log("userName",userName)
-    
+    console.log("userName", userName)
 
-    const handleClick = (event) => {
-        setOpen(event.currentTarget);
-    };
-    const handleClose = () => {
-        setOpen(null);
-    };
+    const toggle = (event) => {
+        open ? setOpen(null) : setOpen(event.currentTarget);
+    }
+
 
     const navigateToMyAccount = () => {
-        window.location.href = "/recipe/myaccount";
+        // window.location.href = "/recipe/myaccount";
+        setOpen(null);
+        navigate(routes.user_account_page)
     }
 
     const logoutHandler = () => {
-        // setUserName('');
+        setOpen(null);
+        sessionStorage.clear("userData")
         window.location.href = "/recipe/";
     }
 
     return (
-         
+
         <>
-        
             <Avatar aria-controls={isOpen ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={isOpen ? 'true' : undefined}
-                onClick={handleClick}
-                className={ userName? 'profileDropdown' : "hideProfile"}>{userName.slice(0,1).toUpperCase()}</Avatar>
+                onClick={toggle}
+                className={userName ? 'profileDropdown' : "hideProfile"}>{userName.charAt(0).toUpperCase()}</Avatar>
             <Menu
                 id="basic-menu"
                 anchorEl={open}
                 open={isOpen}
-                onClose={handleClose}
+                onClose={toggle}
                 MenuListProps={{
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem>{userName}</MenuItem>
+                <MenuItem onClick={() => { setOpen(null) }}>{userName}</MenuItem>
                 <MenuItem onClick={navigateToMyAccount}>My account</MenuItem>
                 <MenuItem onClick={logoutHandler}>Logout</MenuItem>
             </Menu>
 
 
         </>
-        
+
     );
 }

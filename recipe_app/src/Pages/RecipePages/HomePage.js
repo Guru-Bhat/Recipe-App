@@ -17,10 +17,15 @@ export default function HomePage() {
     const navigate = useNavigate();
     const isLoggedIn= useSelector(state=>state.session.login);
     const userName= useSelector(state=>state.session.userName);
-    const isAdmin= useSelector(state=>state.session.isAdmin);
+    const role= useSelector(state=>state.session.role);
     const email= useSelector(state=>state.session.email);
-console.log("isLoggedIn",isLoggedIn, userName,email, isAdmin);
+console.log("isLoggedIn",isLoggedIn, userName,email, role);
 
+
+
+// useEffect(()=>{
+//     let userData=JSON.parse(sessionStorage.getItem("userData"))
+// })
 
     const searchHandle=(searchValue)=>{
         console.log("searchValue",searchValue);
@@ -35,8 +40,9 @@ console.log("isLoggedIn",isLoggedIn, userName,email, isAdmin);
 
     return (
         <>
+        <div className="center-searchbar">
         <SearchBar onSearch={searchHandle}/>
-       
+        </div>
             <div>
             <h1 className="heading-text-level1">Recipes</h1>
             {!data ? (<div>{error ? error.message : 'Under maintanace'}</div>) :

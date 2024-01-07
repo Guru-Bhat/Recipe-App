@@ -19,13 +19,13 @@ import UserProfile from "./UserProfile"
 export default function Header(){
     return(
         // <div >
-            <Navbar >
-                <div className='navBar'>
+            <Navbar className='navBar' >
+                {/* <div className='navBar'> */}
                 <img alt='logo' src={logo} className='logo' ></img>
                     {/* <p>profile dropdown</p> */}
                     <UserProfile />
                
-                </div>
+                {/* </div> */}
             </Navbar>
             
         // </div>
