@@ -1,32 +1,13 @@
 import { useEffect, useState } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { getRecipeImage } from "../customHooks/GetImage";
 import { useEditRecipeMutation, useDeleteRecipeMutation } from '../Redux/apiSlice';
 import "../Assets/Styles/userAccountPage.scss"
 import "../Assets/Styles/common.scss"
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import routes from '../Routes/RoutesList';
-import DeleteRecipe from '../Pages/RecipePages/DeleteRecipe'
 import { useGetRecipesByEmailQuery } from "../Redux/apiSlice"
-// import {
-//   Modal,
-//   ModalHeader,
-//   ModalBody,
-//   ModalFooter
-// } from 'reactstrap';
 import ModalComoonent from './ModalComoonent';
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
 import Notification from '../Components/Notification'
 
 
@@ -38,7 +19,8 @@ export default function UsersRecipeTable(props) {
   const [deleteRecipe] = useDeleteRecipeMutation();
   const [count, setCount] = useState()
   const [edit, setEdit] = useState(false)
-  const [recipeDetails, setRecipeDetails] = useState(JSON.parse(sessionStorage.getItem("recipeDetails")))
+
+  // const [recipeDetails, setRecipeDetails] = useState(JSON.parse(sessionStorage.getItem("recipeDetails")))
 
   const navigate = useNavigate()
   const userData = JSON.parse(sessionStorage.getItem("userData"))
@@ -52,7 +34,7 @@ export default function UsersRecipeTable(props) {
     }
   }, [count, myRecipes])
 
- 
+
 
   const editRecipeHandler = (recipeDetails) => {
     sessionStorage.setItem("recipeDetails", JSON.stringify(recipeDetails))
@@ -70,7 +52,7 @@ export default function UsersRecipeTable(props) {
 
   const deleteRecipeHandler = () => {
     console.log("reccipe deleted is", recipeToBeDeleted)
-    
+
     setNotificationOpen(true);
     deleteRecipe({ id: recipeToBeDeleted.id })
     setRecipeToBeDeleted('')
@@ -81,10 +63,10 @@ export default function UsersRecipeTable(props) {
 
   const viewRecipeDetails = (id) => {
     navigate(routes.recipe_details,
-        {
-            state: { recipeId: id }
-        });
-}
+      {
+        state: { recipeId: id }
+      });
+  }
 
   const toggle = () => setShowModal(!showModal);
 
@@ -118,30 +100,14 @@ export default function UsersRecipeTable(props) {
           </tbody>
         </table>
       </div>
+      
       {showModal &&
-
-      <ModalComoonent showModal={showModal} details={recipeToBeDeleted} onClose={()=>setShowModal(false)} onDelete={deleteRecipeHandler}/>
-        // <Modal
-        //   isOpen={showModal}
-        //   toggle={toggle}
-        // >
-        //   <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        //   <ModalBody>
-        //     {recipeToBeDeleted.title}
-        //   </ModalBody>
-        //   <ModalFooter>
-        //     <Button color="warning" onClick={deleteRecipeHandler}>
-        //       Ok
-        //     </Button>{' '}
-        //     <Button color="secondary" onClick={toggle}>
-        //       Cancel
-        //     </Button>
-        //   </ModalFooter>
-        // </Modal>
+        <ModalComoonent showModal={showModal} details={recipeToBeDeleted} onClose={() => setShowModal(false)} onDelete={deleteRecipeHandler} />
       }
-{notificationOpen &&
-      <Notification message="Recipe deleted" />
-}
+
+      {notificationOpen &&
+        <Notification message="Recipe deleted" />
+      }
 
     </div>
 

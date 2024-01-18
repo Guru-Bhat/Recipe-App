@@ -41,8 +41,10 @@
 // }
 
 .recipe-image {
-    height: 10rem;
+    height: auto;
     width: 60%;
+    // height: auto;
+    // max-width: 100%;
     object-fit: cover;
     // border-radius: 10px 10px 0 0;
     margin: auto auto 0 auto;
@@ -81,9 +83,92 @@
 
 
 .latest-recipe-image{
-    height: 100px;
+    height: auto;
     width: 100%;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
     margin:auto auto 0 auto;
 }
+
+//Tablet iPads portrait mode max-width
+// @media screen and (max-width: 1024px) {
+    
+//   }
+
+//Low resolution Tablets and iPads
+// @media screen and (max-width: 750px) {
+    
+//   }
+
+
+// Smart phone landscape
+  @media screen and (max-width: 600px) {
+    .details-page-container {
+        width: 80%;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 5px;
+        background-color: rgb(248, 248, 248);
+        box-sizing: border-box !important;
+        padding: 0 10px 0 10px;
+        overflow-y: scroll;
+    }
+
+    .sideColumnItems{
+       display: none;    
+    }
+
+    // .sideColumnItems {
+    //     grid-area: 5/1/6/span 2;
+    // width: 90%;
+    // display: grid;
+    // grid-template-rows: auto;
+    // gap: 5px;
+    // background-color: rgb(248, 248, 248);
+    // box-sizing: border-box !important;
+    // padding: 0 10px 0 10px;
+    // }
+
+    .recipe-image {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        margin: auto auto 0 auto;
+    }
+  }
+
+  //Smartphone portrit
+  @media screen and (max-width: 480px) {
+    .details-page-container {
+        width: 80%;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 5px;
+        background-color: rgb(248, 248, 248);
+        box-sizing: border-box !important;
+        padding: 0 10px 0 10px;
+        overflow-y: scroll;
+    }
+
+    .sideColumnItems{
+       display: none;    
+    }
+
+    // .sideColumnItems {
+    //     grid-area: 5/1/6/span 2;
+    // width: 90%;
+    // display: grid;
+    // grid-template-rows: auto;
+    // gap: 5px;
+    // background-color: rgb(248, 248, 248);
+    // box-sizing: border-box !important;
+    // padding: 0 10px 0 10px;
+    // }
+
+    .recipe-image {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        margin: auto auto 0 auto;
+    }
+  }

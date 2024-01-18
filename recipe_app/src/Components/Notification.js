@@ -28,12 +28,12 @@ const Notification = ({ message }) => {
         notify();
     },[])
 
-  const notify = () => toast.info(message, { position: 'top-center' } );
+  const notify = () => toast.info(message, { position: 'top-center', autoClose: 10000 } );
 
   return (
     <div>
-      <ToastContainer position="top-center"  />
-      {/* <button onClick={notify}>Show Notification</button> */}
+    {/* <ToastContainer position="top-center" autoClose={3000}/> */}
+      <ToastContainer position="top-center" hideProgressBar/>
     </div>
   );
 };

@@ -5,7 +5,6 @@ import RecipeDetails from '../Pages/RecipePages/RecipeDetails'
 import UserAccountPage from '../Pages/AccountPages/UserAccountPage'
 import AddRecipe from '../Pages/RecipePages/AddRecipe'
 import EditRecipe from '../Pages/RecipePages/EditRecipe'
-import DeleteRecipe from '../Pages/RecipePages/DeleteRecipe'
 
 const routes={
     signUp: SignUp,
@@ -29,8 +28,6 @@ const routes={
     editRecipe: EditRecipe,
     edit_recipe: "/recipe/editrecipe",
 
-    deleteRecipe:DeleteRecipe,
-    delete_recipe: "/recipe/deleterecipe"
 }
 
 export default routes;

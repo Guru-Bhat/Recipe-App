@@ -385,16 +385,16 @@
       "votes": 0
     },
     {
-      "title": "test recipe2",
-      "ingredients": "ss fff ggg jjj hjh",
-      "directions": "sfsf ddgyryty dfhytjuyk jhfyjuyj dth trhuy sd rsey yzgfry kiu xdrt sdddddddddddddddddd hhhhhhhhhhhhhhhhhhh eeeeeeeeeeu uuuuuuuuuuuuuuuuuu rrrrrrrrrrrrrrrrrr hhhhhhhhhhhhhhhhhhhhhhf             fffd\nvgjhjjjjjjjjj dffffffhhhhhhhhhhhhhhh",
+      "title": "ss",
+      "ingredients": "dd",
+      "directions": "ss",
       "author": "test",
       "email": "test@test.com",
-      "category": "Non-Veg",
-      "subCategory": "South indian",
+      "category": "ss",
+      "subCategory": "",
       "rating": 0,
       "votes": 0,
-      "id": 20
+      "id": 21
     }
   ]
 }
