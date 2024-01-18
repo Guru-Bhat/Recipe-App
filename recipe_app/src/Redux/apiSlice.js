@@ -18,7 +18,7 @@ export const recipeApi=createApi({
 
         getRecipesByEmail: builder.query({
             query: (email) => `/recipesList?email=${email}`,
-            providesTags:['email']
+            providesTags:['recipesList']
         }),
 
         addRecipe: builder.mutation({

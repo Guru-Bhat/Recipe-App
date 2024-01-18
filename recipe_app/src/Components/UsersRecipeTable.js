@@ -18,17 +18,23 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import routes from '../Routes/RoutesList';
 import DeleteRecipe from '../Pages/RecipePages/DeleteRecipe'
 import { useGetRecipesByEmailQuery } from "../Redux/apiSlice"
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from 'reactstrap';
+// import {
+//   Modal,
+//   ModalHeader,
+//   ModalBody,
+//   ModalFooter
+// } from 'reactstrap';
+import ModalComoonent from './ModalComoonent';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import Notification from '../Components/Notification'
+
 
 export default function UsersRecipeTable(props) {
   // const [myRecipes, setMyRecipes] = useState(null);
   const [showModal, setShowModal] = useState(false)
   const [recipeToBeDeleted, setRecipeToBeDeleted] = useState()
+  const [notificationOpen, setNotificationOpen] = useState(false);
   const [deleteRecipe] = useDeleteRecipeMutation();
   const [count, setCount] = useState()
   const [edit, setEdit] = useState(false)
@@ -64,6 +70,8 @@ export default function UsersRecipeTable(props) {
 
   const deleteRecipeHandler = () => {
     console.log("reccipe deleted is", recipeToBeDeleted)
+    
+    setNotificationOpen(true);
     deleteRecipe({ id: recipeToBeDeleted.id })
     setRecipeToBeDeleted('')
     setShowModal(false);
@@ -79,6 +87,14 @@ export default function UsersRecipeTable(props) {
 }
 
   const toggle = () => setShowModal(!showModal);
+
+  const handleNotificationClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setNotificationOpen(false);
+  };
 
   return (
     <div>
@@ -103,25 +119,29 @@ export default function UsersRecipeTable(props) {
         </table>
       </div>
       {showModal &&
-        <Modal
-          isOpen={showModal}
-          toggle={toggle}
-        >
-          <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-          <ModalBody>
-            {recipeToBeDeleted.title}
-          </ModalBody>
-          <ModalFooter>
-            <Button color="warning" onClick={deleteRecipeHandler}>
-              Ok
-            </Button>{' '}
-            <Button color="secondary" onClick={toggle}>
-              Cancel
-            </Button>
-          </ModalFooter>
-        </Modal>
-      }
 
+      <ModalComoonent showModal={showModal} details={recipeToBeDeleted} onClose={()=>setShowModal(false)} onDelete={deleteRecipeHandler}/>
+        // <Modal
+        //   isOpen={showModal}
+        //   toggle={toggle}
+        // >
+        //   <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        //   <ModalBody>
+        //     {recipeToBeDeleted.title}
+        //   </ModalBody>
+        //   <ModalFooter>
+        //     <Button color="warning" onClick={deleteRecipeHandler}>
+        //       Ok
+        //     </Button>{' '}
+        //     <Button color="secondary" onClick={toggle}>
+        //       Cancel
+        //     </Button>
+        //   </ModalFooter>
+        // </Modal>
+      }
+{notificationOpen &&
+      <Notification message="Recipe deleted" />
+}
 
     </div>
 

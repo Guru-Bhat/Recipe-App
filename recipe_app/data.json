@@ -108,18 +108,6 @@
   ],
   "recipesList": [
     {
-      "id": 1,
-      "title": "Recipe00001",
-      "ingredients": "Ingredient 1,Ingredient 02",
-      "directions": "Prepare Greens: Wash and tear mixed salad greens.Chop Veggies: Slice tomatoes, cucumber, red onion, carrots, and bell peppers.Combine Ingredients: Mix veggies in a bowl, add optional feta cheese.",
-      "author": "test@test.com",
-      "email": "test@test.com",
-      "category": "Veg",
-      "subCategory": "Sandwich",
-      "rating": 0,
-      "votes": 0
-    },
-    {
       "id": 3,
       "title": "Recipe3",
       "ingredients": [
@@ -293,109 +281,120 @@
       "votes": 0,
       "id": 14
     },
-      {
-        "id": 1,
-        "title": "Mango Salsa Chicken",
-        "ingredients": [
-          "Boneless chicken breast",
-          "Mango",
-          "Red onion",
-          "Cilantro",
-          "Lime",
-          "Salt",
-          "Pepper"
-        ],
-        "directions": "Season chicken with salt and pepper. Grill until cooked. Dice mango, red onion, and cilantro. Mix diced ingredients with lime juice. Serve grilled chicken topped with mango salsa.",
-        "author": "Guru",
-        "email": "guru@gmail.com",
-        "category": "Main Course",
-        "subCategory": "Grilled",
-        "rating": 0,
-        "votes": 0
-      },
-      {
-        "id": 2,
-        "title": "Vegetarian Pasta Primavera",
-        "ingredients": [
-          "Penne pasta",
-          "Broccoli",
-          "Carrots",
-          "Bell peppers",
-          "Cherry tomatoes",
-          "Olive oil",
-          "Garlic",
-          "Parmesan cheese"
-        ],
-        "directions": "Boil pasta until al dente. Sauté vegetables in olive oil and garlic. Toss cooked pasta with sautéed vegetables. Sprinkle with Parmesan cheese before serving.",
-        "author": "Guru",
-        "email": "guru@gmail.com",
-        "category": "Vegetarian",
-        "subCategory": "Pasta",
-        "rating": 0,
-        "votes": 0
-      },
-      {
-        "id": 3,
-        "title": "Spicy Shrimp Tacos",
-        "ingredients": [
-          "Shrimp",
-          "Taco shells",
-          "Cabbage",
-          "Avocado",
-          "Lime",
-          "Cilantro",
-          "Sour cream",
-          "Hot sauce"
-        ],
-        "directions": "Season shrimp with spices and grill. Assemble tacos with grilled shrimp, shredded cabbage, sliced avocado, lime, and cilantro. Top with sour cream and hot sauce.",
-        "author": "Guru",
-        "email": "guru@gmail.com",
-        "category": "Seafood",
-        "subCategory": "Tacos",
-        "rating": 0,
-        "votes": 0
-      },
-      {
-        "id": 4,
-        "title": "Classic Chocolate Chip Cookies",
-        "ingredients": [
-          "All-purpose flour",
-          "Butter",
-          "Brown sugar",
-          "Granulated sugar",
-          "Eggs",
-          "Vanilla extract",
-          "Baking soda",
-          "Chocolate chips"
-        ],
-        "directions": "Cream butter and sugars. Add eggs and vanilla. Mix in dry ingredients. Fold in chocolate chips. Drop dough onto baking sheets. Bake until golden brown.",
-        "author": "Guru",
-        "email": "guru@gmail.com",
-        "category": "Dessert",
-        "subCategory": "Cookies",
-        "rating": 0,
-        "votes": 0
-      },
-      {
-        "id": 5,
-        "title": "Caprese Salad",
-        "ingredients": [
-          "Tomatoes",
-          "Fresh mozzarella",
-          "Basil leaves",
-          "Balsamic glaze",
-          "Olive oil",
-          "Salt",
-          "Pepper"
-        ],
-        "directions": "Slice tomatoes and mozzarella. Arrange on a plate with fresh basil leaves. Drizzle with balsamic glaze and olive oil. Season with salt and pepper.",
-        "author": "Guru",
-        "email": "guru@gmail.com",
-        "category": "Salad",
-        "subCategory": "Caprese",
-        "rating": 0,
-        "votes": 0
-      }
-    
+    {
+      "id": 15,
+      "title": "Mango Salsa Chicken",
+      "ingredients": [
+        "Boneless chicken breast",
+        "Mango",
+        "Red onion",
+        "Cilantro",
+        "Lime",
+        "Salt",
+        "Pepper"
+      ],
+      "directions": "Season chicken with salt and pepper. Grill until cooked. Dice mango, red onion, and cilantro. Mix diced ingredients with lime juice. Serve grilled chicken topped with mango salsa.",
+      "author": "Guru",
+      "email": "guru@gmail.com",
+      "category": "Main Course",
+      "subCategory": "Grilled",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 16,
+      "title": "Vegetarian Pasta Primavera",
+      "ingredients": [
+        "Penne pasta",
+        "Broccoli",
+        "Carrots",
+        "Bell peppers",
+        "Cherry tomatoes",
+        "Olive oil",
+        "Garlic",
+        "Parmesan cheese"
+      ],
+      "directions": "Boil pasta until al dente. Sauté vegetables in olive oil and garlic. Toss cooked pasta with sautéed vegetables. Sprinkle with Parmesan cheese before serving.",
+      "author": "Guru",
+      "email": "guru@gmail.com",
+      "category": "Vegetarian",
+      "subCategory": "Pasta",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 17,
+      "title": "Spicy Shrimp Tacos",
+      "ingredients": [
+        "Shrimp",
+        "Taco shells",
+        "Cabbage",
+        "Avocado",
+        "Lime",
+        "Cilantro",
+        "Sour cream",
+        "Hot sauce"
+      ],
+      "directions": "Season shrimp with spices and grill. Assemble tacos with grilled shrimp, shredded cabbage, sliced avocado, lime, and cilantro. Top with sour cream and hot sauce.",
+      "author": "Guru",
+      "email": "guru@gmail.com",
+      "category": "Seafood",
+      "subCategory": "Tacos",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 18,
+      "title": "Classic Chocolate Chip Cookies",
+      "ingredients": [
+        "All-purpose flour",
+        "Butter",
+        "Brown sugar",
+        "Granulated sugar",
+        "Eggs",
+        "Vanilla extract",
+        "Baking soda",
+        "Chocolate chips"
+      ],
+      "directions": "Cream butter and sugars. Add eggs and vanilla. Mix in dry ingredients. Fold in chocolate chips. Drop dough onto baking sheets. Bake until golden brown.",
+      "author": "Guru",
+      "email": "guru@gmail.com",
+      "category": "Dessert",
+      "subCategory": "Cookies",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "id": 19,
+      "title": "Caprese Salad",
+      "ingredients": [
+        "Tomatoes",
+        "Fresh mozzarella",
+        "Basil leaves",
+        "Balsamic glaze",
+        "Olive oil",
+        "Salt",
+        "Pepper"
+      ],
+      "directions": "Slice tomatoes and mozzarella. Arrange on a plate with fresh basil leaves. Drizzle with balsamic glaze and olive oil. Season with salt and pepper.",
+      "author": "Guru",
+      "email": "guru@gmail.com",
+      "category": "Salad",
+      "subCategory": "Caprese",
+      "rating": 0,
+      "votes": 0
+    },
+    {
+      "title": "test recipe2",
+      "ingredients": "ss fff ggg jjj hjh",
+      "directions": "sfsf ddgyryty dfhytjuyk jhfyjuyj dth trhuy sd rsey yzgfry kiu xdrt sdddddddddddddddddd hhhhhhhhhhhhhhhhhhh eeeeeeeeeeu uuuuuuuuuuuuuuuuuu rrrrrrrrrrrrrrrrrr hhhhhhhhhhhhhhhhhhhhhhf             fffd\nvgjhjjjjjjjjj dffffffhhhhhhhhhhhhhhh",
+      "author": "test",
+      "email": "test@test.com",
+      "category": "Non-Veg",
+      "subCategory": "South indian",
+      "rating": 0,
+      "votes": 0,
+      "id": 20
+    }
   ]
 }

@@ -142,7 +142,7 @@
     width: 50px;
 }
 
-.hideProfile {
+.hide {
     display: none !important;
 }
 
@@ -150,6 +150,10 @@
     margin: 30% 0 30% 0;
     display: flex;
     justify-content: center;
+}
+
+.button{
+    margin: 2px 5px 2px 5px!important;
 }
 
 .floating-button{
@@ -164,4 +168,29 @@
 
 .border{
     border: 1px solid rgb(199, 77, 77);
+}
+
+.header-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    justify-content: center;
+    align-items: center;
+    // border-radius: 30px !important;
+    // height: 50px;
+    // width: 50px;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.modalBody{
+    background-color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    width: 50%;
+    display: block;
+    text-align: center;
 }

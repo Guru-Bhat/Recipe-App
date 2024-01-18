@@ -15,7 +15,9 @@ export default function Router() {
             <Routes>
                 <Route path='/' element={<Layout />}>
 
-                <Route index path='/recipe' Component={routers.signUp} />
+                <Route index path='/recipe' Component={routers.homePage} />
+
+                {/* <Route index path='/recipe' Component={routers.signUp} /> */}
                 <Route exact path={routers.sign_up} element={<routers.signUp />} />
                 <Route exact path={routers.sign_in} element={<routers.signIn />} />
 

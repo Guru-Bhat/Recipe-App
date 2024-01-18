@@ -1,33 +1,21 @@
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText,
-  } from 'reactstrap';
+import { Navbar } from 'reactstrap';
 import logo from '../Assets/images/logo.PNG'
 import '../Assets/Styles/common.scss'
 import UserProfile from "./UserProfile"
+import HeaderButtons from './HeaderButtons';
 
-export default function Header(){
-    return(
-        // <div >
-            <Navbar className='navBar' >
-                {/* <div className='navBar'> */}
-                <img alt='logo' src={logo} className='logo' ></img>
-                    {/* <p>profile dropdown</p> */}
-                    <UserProfile />
-               
-                {/* </div> */}
-            </Navbar>
-            
-        // </div>
+export default function Header() {
+
+    return (
+        <Navbar className='navBar' >
+
+            <img alt='logo' src={logo} className='logo' ></img>
+
+            <HeaderButtons />
+
+            <UserProfile />
+
+        </Navbar>
+
     )
 }

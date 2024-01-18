@@ -48,7 +48,7 @@ export default function UserProfile() {
                 aria-haspopup="true"
                 aria-expanded={isOpen ? 'true' : undefined}
                 onClick={toggle}
-                className={userName ? 'profileDropdown' : "hideProfile"}>{userName.charAt(0).toUpperCase()}</Avatar>
+                className={userName ? 'profileDropdown' : "hide"}>{userName.charAt(0).toUpperCase()}</Avatar>
             <Menu
                 id="basic-menu"
                 anchorEl={open}

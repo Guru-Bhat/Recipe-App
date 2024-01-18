@@ -4,13 +4,13 @@ import {useAddRecipeMutation} from "../../Redux/apiSlice"
 import { useNavigate } from 'react-router-dom';
 import routes from '../../Routes/RoutesList'
 import Button from '@mui/material/Button';
-
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from 'reactstrap';
+import Modal from '@mui/material/Modal';
+// import {
+//   Modal,
+//   ModalHeader,
+//   ModalBody,
+//   ModalFooter
+// } from 'reactstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function DeleteRecipe(){
@@ -38,20 +38,13 @@ const submitFormHandler=(e)=>{
           <Modal
         isOpen={showModal}
         toggle={toggle}
-        
       >
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>
-          hello
-        </ModalBody>
-        <ModalFooter>
           <Button color="primary" onClick={toggle}>
             Do Something
           </Button>{' '}
           <Button color="secondary" onClick={toggle}>
             Cancel
           </Button>
-        </ModalFooter>
       </Modal>
         </>
     )
