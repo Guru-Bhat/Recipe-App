@@ -94,7 +94,9 @@ export default function UsersRecipeTable(props) {
                   <td><Button variant="contained" onClick={() => editRecipeHandler(myRecipe)}>Edit</Button></td>
                   <td><Button variant="contained" color="error" onClick={() => modalHandler(myRecipe)}>Delete</Button></td>
                   <td><Button variant="contained" color="success" onClick={() => viewRecipeDetails(myRecipe.id)}>View</Button></td>
+                  <br/>
                 </tr>
+                
               // </div>
             ))}
           </tbody>
