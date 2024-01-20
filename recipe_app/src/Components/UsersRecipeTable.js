@@ -83,19 +83,19 @@ export default function UsersRecipeTable(props) {
       <b className="heading-text-level2 center-item">My Uploads</b>
       <div className="table-container">
         <table >
-          <tbody>
+          <tbody classNmae='tableBody'>
             {/* Populate the table body with rows and cells */}
             {myRecipes && myRecipes.map((myRecipe) => (
-              <div className='table-row' key={myRecipe.id}>
-                <tr>
-                  <img src={getRecipeImage(myRecipe)} alt="" className="small-image" />
+              // <div className='table-row' key={myRecipe.id}>
+                <tr className='table-row' key={myRecipe.id}>
+                <td><img src={getRecipeImage(myRecipe)} alt="" className="small-image" /></td>
                   <td>{myRecipe.title}</td>
                   <td>{myRecipe.rating}</td>
                   <td><Button variant="contained" onClick={() => editRecipeHandler(myRecipe)}>Edit</Button></td>
                   <td><Button variant="contained" color="error" onClick={() => modalHandler(myRecipe)}>Delete</Button></td>
                   <td><Button variant="contained" color="success" onClick={() => viewRecipeDetails(myRecipe.id)}>View</Button></td>
                 </tr>
-              </div>
+              // </div>
             ))}
           </tbody>
         </table>

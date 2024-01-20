@@ -7,15 +7,17 @@ import HeaderButtons from './HeaderButtons';
 export default function Header() {
 
     return (
-        <Navbar className='navBar' >
-
+        <div className='navBar' >
+<div className='left'>
             <img alt='logo' src={logo} className='logo' ></img>
-
+            </div>
+<div className='right'>
             <HeaderButtons />
 
             <UserProfile />
-
-        </Navbar>
+            </div>
+            
+        </div>
 
     )
 }

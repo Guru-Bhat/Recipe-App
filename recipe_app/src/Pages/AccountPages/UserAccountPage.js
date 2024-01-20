@@ -30,7 +30,7 @@ export default function UserAccountPage() {
     return (
         <div  className="">
             <b className="heading-text-level1 center-item">My account</b>
-            <div className="myUploads">
+            {/* <div className="myUploads"> */}
             
             <div className="center-item">
                 <UsersRecipeTable data={myRecipes} />
@@ -44,7 +44,7 @@ export default function UserAccountPage() {
                 ))
 } */}
  </div>
-            </div>
+            {/* </div> */}
             <br/>
             <div  className="center-item">
             <Button variant="contained" color="success" className="center-item large-button"onClick={navigateToAddRecipePage}>Add New Recipe</Button>
