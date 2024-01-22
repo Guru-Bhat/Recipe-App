@@ -109,7 +109,7 @@ export default function SignUp() {
                 
                 <div className='card'>
                     <b className='heading-text-level1'>Sign Up</b>
-                    <Form onSubmit={(e) => submitFormHandler(e)} autoComplete='off'>
+                    <Form onSubmit={(e) => submitFormHandler(e)} autoComplete='off' className='form'>
                         <FormGroup className='form-group'>
                             <Input className="form-control signup-input" placeholder='Name*' type='text' name='fullName' value={fullName} maxLength={30} onChange={(e) => handleInputField(e, 'name')} required />
                             {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Name<super>*</super></Label> */}

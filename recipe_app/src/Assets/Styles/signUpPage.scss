@@ -28,3 +28,13 @@
     position: relative;
     margin-top: 1rem;
 }
+
+@media screen and (max-width: 750px) {
+    .form-control{
+        max-width: 100%!important;
+    }
+
+    .signup-input{
+        width:100%;
+    }
+  }

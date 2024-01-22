@@ -7,11 +7,11 @@
     line-height: 1.5rem;
 }
 
-.body{
-    margin: 0 50px 0 50px!important;
+.body {
+    margin: 0 50px 0 50px !important;
 }
 
-.layout{
+.layout {
     background-color: $background-color;
 }
 
@@ -43,6 +43,8 @@
     color: $normal-text-color;
     font-size: 1.2rem;
     line-height: 1.5rem;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .card {
@@ -53,13 +55,9 @@
     background-color: #fff;
     background-clip: border-box;
     margin: 5px auto 5px auto;
-    padding-top: 30px;
-    width: 400px;
-
+    padding: 30px 50px 50px 50px;
+    max-width: 400px;
     border: 1px solid rgb(196, 188, 179);
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
     margin-top: 2rem;
 }
 
@@ -121,13 +119,14 @@
     // padding: 10px 5px 10px 5px;
     height: 3rem;
     width: 100%;
-  }
-  
-  .left , .right {
+}
+
+.left,
+.right {
     display: flex;
     align-items: center;
     padding: 0 5px 0 5px;
-  }
+}
 
 .logo {
     width: 20%;
@@ -137,7 +136,7 @@
 }
 
 .footer {
-    width:100%;
+    width: 100%;
     background-color: black;
     margin: 30px 0px 0px 0px;
     padding: 10px 5px 10px 5px;
@@ -173,25 +172,25 @@
     justify-content: center;
 }
 
-.button{
-    margin: 2px 5px 2px 5px!important;
+.button {
+    margin: 2px 5px 2px 5px !important;
 }
 
-.floating-button{
+.floating-button {
     position: fixed !important;
     right: 0;
     top: 0;
 }
 
-.large-button{
+.large-button {
     width: 50%
 }
 
-.border{
+.border {
     border: 1px solid rgb(199, 77, 77);
 }
 
-.header-buttons{
+.header-buttons {
     display: flex;
     flex-wrap: wrap;
     float: right;
@@ -202,13 +201,13 @@
     // width: 50px;
 }
 
-.modal{
+.modal {
     display: flex;
     align-items: center;
     justify-content: center
 }
 
-.modalBody{
+.modalBody {
     background-color: white;
     padding: 1rem 2rem 1rem 2rem;
     width: 50%;
@@ -219,55 +218,79 @@
 .centeredContent {
     display: flex;
     align-items: center;
-  }
+}
 
- //Tablet iPads portrait mode max-width
- @media screen and (max-width: 1024px) {
-    .grid-container{
+.textOverFlow {
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+//Tablet iPads portrait mode max-width
+@media screen and (max-width: 1024px) {
+    .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        gap:5px;
+        gap: 5px;
         background-color: rgb(248, 248, 248);
         padding: 5px;
-        }
-  }
+    }
+}
 
 //Low resolution Tablets and iPads
 @media screen and (max-width: 750px) {
-    .body{
-        margin: 0 10px 0 10px!important;
+    .body {
+        margin: 0 10px 0 10px !important;
     }
-  }
+    .left{
+        display: inline;
+    }
+    .right{
+        width:80%!important;
+        display: block;
+    }
+
+}
 
 
 // Smart phone landscape
-  @media screen and (max-width: 600px) {
-    .body{
-        margin: 0 1px 0 1px!important;
+@media screen and (max-width: 600px) {
+    .body {
+        margin: 0 1px 0 1px !important;
     }
-  }
 
-  //Smartphone portrit
-  @media screen and (max-width: 480px) {
-    .grid-container{
+    .card {
+        display: block;
+        max-width: 100%;
+        padding: 5px 5px 5px 5px;
+        margin-top: 5px;
+    }
+
+    .heading-text-level1 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+//Smartphone portrit
+@media screen and (max-width: 480px) {
+    .grid-container {
         display: grid;
         grid-template-columns: auto;
-        gap:5px;
+        gap: 5px;
         background-color: rgb(248, 248, 248);
         padding: 5px;
-        }
+    }
 
-        .grid-container>div{
-            background-color: rgb(249, 250, 252);
-            text-align: start;
-            padding: 0 0 2.5px 0;
-            font-size: 15px;
-            border: solid 1px rgb(184, 178, 178);
-            border-radius: 5px;
-        }
-        
-        .recipeCard:hover{
-            box-shadow: 0 0 5px 0 rgb(109, 105, 105);
-        }
-  }
-  
+    .grid-container>div {
+        background-color: rgb(249, 250, 252);
+        text-align: start;
+        padding: 0 0 2.5px 0;
+        font-size: 15px;
+        border: solid 1px rgb(184, 178, 178);
+        border-radius: 5px;
+    }
+
+    .recipeCard:hover {
+        box-shadow: 0 0 5px 0 rgb(109, 105, 105);
+    }
+}

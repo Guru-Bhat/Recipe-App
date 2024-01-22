@@ -62,7 +62,7 @@ export default function RecipeDetails() {
                                 {/* <div className="center-item"> */}
                                 <img alt={recipe.title} src={getRecipeImage(recipe.title)} className="latest-recipe-image"></img>
                                 {/* </div> */}
-                                <b className="heading-text-level2">{recipe.title}</b>
+                                <b className="heading-text-level2 textOverFlow">{recipe.title}</b>
                             </div>
                         ))
 
