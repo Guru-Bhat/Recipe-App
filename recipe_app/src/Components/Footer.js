@@ -1,17 +1,19 @@
+import routes from "../Routes/RoutesList"
+import { Link } from "react-router-dom"
 
 export default function Footer(){
     return(
         <div className="footer">
             <div >
-            <a  className="links" href='/recipe/homepage' >Home </a>
+            <Link  className="links" to={routes.home_page} >Home </Link>
             </div>
             
             <div>
-            <a  className="links" href='/'>About </a>
+            <Link  className="links" to={routes.about_us}>About us</Link>
             </div>
             
             <div>
-            <a  className="links" href='/'>Contact us</a>
+            <Link  className="links" href='/'>Contact us</Link>
             </div>
             
             

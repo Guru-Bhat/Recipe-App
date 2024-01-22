@@ -28,6 +28,8 @@ export default function Router() {
                 <Route exact path={routers.add_recipe} element={<routers.addRecipe />} />
                 <Route exact path={routers.edit_recipe} element={<routers.editRecipe />} />
                 <Route exact path={routers.delete_recipe} element={<routers.deleteRecipe />} />
+
+                <Route exact path={routers.about_us} element={<routers.aboutUs />} />
                 
                 </Route>
             </Routes>
