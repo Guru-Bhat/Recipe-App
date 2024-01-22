@@ -13,7 +13,7 @@ export default function Footer(){
             </div>
             
             <div>
-            <Link  className="links" href='/'>Contact us</Link>
+            <Link  className="links"  to={routes.contact_us}>Contact us</Link>
             </div>
             
             

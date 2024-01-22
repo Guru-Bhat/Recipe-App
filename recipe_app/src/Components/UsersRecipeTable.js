@@ -83,7 +83,7 @@ export default function UsersRecipeTable(props) {
       <b className="heading-text-level2 center-item">My Uploads</b>
       <div className="table-container">
         <table >
-          <tbody classNmae='tableBody'>
+          <tbody className='tableBody'>
             {/* Populate the table body with rows and cells */}
             {myRecipes && myRecipes.map((myRecipe) => (
               // <div className='table-row' key={myRecipe.id}>

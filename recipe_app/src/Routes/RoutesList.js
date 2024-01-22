@@ -6,6 +6,7 @@ import UserAccountPage from '../Pages/AccountPages/UserAccountPage'
 import AddRecipe from '../Pages/RecipePages/AddRecipe'
 import EditRecipe from '../Pages/RecipePages/EditRecipe'
 import AboutUs from '../Pages/AccountPages/AboutUs'
+import ContactUs from '../Pages/AccountPages/ContactUs'
 
 const routes={
     signUp: SignUp,
@@ -30,7 +31,10 @@ const routes={
     edit_recipe: "/recipe/editrecipe",
 
     aboutUs: AboutUs,
-    about_us: "/aboutus"
+    about_us: "/aboutus",
+
+    contactUS: ContactUs,
+    contact_us: '/contactus'
 
 }
 

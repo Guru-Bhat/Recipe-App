@@ -27,9 +27,9 @@ export default function Router() {
                 <Route exact path={routers.user_account_page} element={<routers.userAccountPage />} />
                 <Route exact path={routers.add_recipe} element={<routers.addRecipe />} />
                 <Route exact path={routers.edit_recipe} element={<routers.editRecipe />} />
-                <Route exact path={routers.delete_recipe} element={<routers.deleteRecipe />} />
 
                 <Route exact path={routers.about_us} element={<routers.aboutUs />} />
+                <Route exact path={routers.contact_us} element={<routers.contactUS />} />
                 
                 </Route>
             </Routes>

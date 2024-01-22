@@ -47,10 +47,10 @@ export default function EditRecipe(props) {
             <b className="heading-text-level1 center-item">Edit Recipe Page</b>
 
             <Form onSubmit={(e) => submitEditedRecipe(e)} autoComplete='off' className="form-control">
-                <formGroup className='form-group'>
+                <FormGroup className='form-group'>
                     <label >Title:</label>
                     <textarea className="form-control signup-input" name='title' value={recipeDetails.title} maxLength={30} onChange={handleInputField} required />
-                </formGroup>
+                </FormGroup>
 
                 <FormGroup className='form-group'>
                     <label>Category:</label>
