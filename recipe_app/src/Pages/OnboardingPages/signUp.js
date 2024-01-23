@@ -1,155 +1,114 @@
-import { Container, Form, FormGroup, Input, Button, Label } from 'reactstrap'
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Loader from '../../Components/Loader'
-import '../../Assets/Styles/common.scss'
-import '../../Assets/Styles/signUpPage.scss'
-import validateEmail from '../../customHooks/SignInSignUpHooks'
-import routes from '../../Routes/RoutesList'
+import { Container, Form, FormGroup, Input, Button } from 'reactstrap';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import validateEmail from '../../customHooks/SignInSignUpHooks';
+import routes from '../../Routes/RoutesList';
 import { useDispatch } from 'react-redux';
-import { setLogin, setUserName, setEmail, setRole } from '../../Redux/sessionDataSlice'
-import { useCreateUserMutation } from '../../Redux/apiSlice'
-import CircularProgress from '@mui/material/CircularProgress';
+import { setLogin, setUserName, setEmail, setRole } from '../../Redux/sessionDataSlice';
+import { useCreateUserMutation } from '../../Redux/apiSlice';
+import Loader from '../../Components/Loader';
+import '../../Assets/Styles/common.scss';
+import '../../Assets/Styles/signUpPage.scss';
 
 export default function SignUp() {
-    let [fullName, setfullName] = useState('')
-    let [mobleNumber, setmobleNumber] = useState(null)
-    let [email, setMail] = useState('')
-    let [isProcessing, setIsProcessing] = useState(false)
-    let [isValidEmail, setIsValidEmail] = useState()
-    let [errorMessageEmail, setErrorMessageEmail] = useState()
-    let [isButtonDisabled, setIsButtonDisabled] = useState(true)
-    let [password, setPassword] = useState('')
-    let [isValidPassword, setIsValidPassword] = useState(false)
-    let [errorMessagePwd, setErrorMessagePwd] = useState()
-    const [createUser] = useCreateUserMutation();
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+  });
 
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+  const [dataValidations, setDataValidations] = useState({
+    isValidEmail: false,
+    isValidPassword: false,
+    errorMessageEmail: '',
+    errorMessagePassword: '',
+  });
 
-    const handleInputField = (e) => {
+  const [isProcessing, setIsProcessing] = useState(false);
+//   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-        console.log("inputs", e.target.value, isButtonDisabled)
-        if (e.target.name === 'fullName') {
-            setfullName(e.target.value)
-        }
-        else if (e.target.name === 'email') {
-            let newEmail = e.target.value
-            // console.log("newEmail", newEmail)
-            setMail(newEmail);
-            let isValidEmail = validateEmail(newEmail)
-            if (isValidEmail) {
-                console.log("isValidEmail", isValidEmail)
-                setIsValidEmail(true)
-                setErrorMessageEmail("")
-                console.log("isValidEmail inside condition", isValidEmail)
-            }
-            else if (newEmail.length > 0 && !isValidEmail) {
-                console.log("isValidEmail inside condition", isValidEmail)
-                setErrorMessageEmail("Invalid email")
-            }
-            else {
-                setErrorMessageEmail("")
-            }
-        }
+  const [createUser] = useCreateUserMutation();
 
-        else {
-            let password = e.target.value
-            let isValidPassword = password.length > 7;
-            setIsValidPassword(isValidPassword)
-            console.log("isValidPassword", isValidPassword)
-            if (isValidPassword) {
-                setPassword(password);
-                setErrorMessagePwd("")
-            }
-            else if (password.length > 0 && !isValidPassword) {
-                setErrorMessagePwd("Minimum 8 character is required")
-            }
-            else {
-                setErrorMessagePwd("")
-            }
-        }
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-        if (fullName && email && isValidEmail && isValidPassword) {
-            setIsButtonDisabled(false)
-        }
+  const isButtonDisabled =
+  formData.fullName.length === 0 ||
+  formData.email.length === 0 ||
+  !dataValidations.isValidEmail ||
+  !dataValidations.isValidPassword;
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+
+    if (name === 'email') {
+      let newEmail = value;
+      setFormData((prevData) => ({ ...prevData, email: newEmail }));
+      let isValidEmail = validateEmail(newEmail);
+      setDataValidations((prevState) => ({ ...prevState, isValidEmail, errorMessageEmail: isValidEmail ? '' : 'Invalid email' }));
+    } else if (name === 'password') {
+      let password = value;
+      let isValidPassword = password.length >= 8;
+      setDataValidations((prevState) => ({ ...prevState, isValidPassword, errorMessagePassword: isValidPassword ? '' : 'Min 8 characters required' }));
     }
 
-    const submitFormHandler = async (e) => {
-        e.preventDefault();
-        let userData={
-            userName: fullName,
-            email: email,
-            password: password,
-            role: "User"
-        }
-        console.log("userData",userData)
-        await createUser({userData})
-        console.log("user created")
-        dispatch(setLogin(true));
-        dispatch(setUserName(fullName));
-        dispatch(setEmail(email));
-        dispatch(setRole("User"));
+    // setIsButtonDisabled(formData.fullName.length === 0 || formData.email.length === 0 || !dataValidations.isValidEmail || !dataValidations.isValidPassword);
+  };
 
-        sessionStorage.setItem("userData",JSON.stringify(userData))
-        
-        navigate(routes.home_page);
-       
-    }  
-    
+  const submitFormHandler = async (e) => {
+    e.preventDefault();
 
-    return (
+    let userData = {
+      id: formData.email,
+      userName: formData.fullName,
+      email: formData.email,
+      password: formData.password,
+      role: 'User',
+    };
 
-        <div className="background-color">
-             {isProcessing ?
-            //  <CircularProgress/>
-            <Loader show={isProcessing} />
-             :
-            <Container className="container">
-                
-                <div className='card'>
-                    <b className='heading-text-level1'>Sign Up</b>
-                    <Form onSubmit={(e) => submitFormHandler(e)} autoComplete='off' className='form'>
-                        <FormGroup className='form-group'>
-                            <Input className="form-control signup-input" placeholder='Name*' type='text' name='fullName' value={fullName} maxLength={30} onChange={(e) => handleInputField(e, 'name')} required />
-                            {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Name<super>*</super></Label> */}
+    await createUser({ userData });
+    dispatch(setLogin(true));
+    dispatch(setUserName(formData.fullName));
+    dispatch(setEmail(formData.email));
+    dispatch(setRole('User'));
 
-                        </FormGroup>
+    sessionStorage.setItem('userData', JSON.stringify(userData));
 
-                        {/* <FormGroup className='form-group'>
-                        <Input className='form-control signup-input' placeholder='Mobile number*' type='text' name='mobleNumber' value={mobleNumber} maxLength={30} onChange={(e)=>handleInputField(e,'mobileNumber')} />
-                        <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label>
-                        
-                    </FormGroup> */}
+    navigate(routes.home_page);
+  };
 
-                        <FormGroup className='form-group'>
-                            <Input className='form-control signup-input' placeholder='Email*' type='text' name='email' value={email} maxLength={30} onChange={(e) => handleInputField(e, 'email')} />
-                            {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label> */}
-                            {!isValidEmail &&
-                                <p className='errorMessage'>{errorMessageEmail}</p>
-                            }
-                        </FormGroup>
+  return (
+    <div className="background-color">
+      {isProcessing ? (
+        <Loader show={isProcessing} />
+      ) : (
+        <Container className="container">
+          <div className="card">
+            <b className="heading-text-level1">Sign Up</b>
+            <Form onSubmit={(e) => submitFormHandler(e)} autoComplete="off" className="form">
+              <FormGroup className="form-group">
+                <Input className="form-control signup-input" placeholder="Name*" type="text" name="fullName" value={formData.fullName} maxLength={30} onChange={handleInput} required />
+              </FormGroup>
+              <FormGroup className="form-group">
+                <Input className="form-control signup-input" placeholder="Email*" type="text" name="email" value={formData.email} maxLength={30} onChange={handleInput} />
+                {!dataValidations.isValidEmail && <p className="errorMessage">{dataValidations.errorMessageEmail}</p>}
+              </FormGroup>
+              <FormGroup className="form-group">
+                <Input className="form-control signup-input" placeholder="Password(Min 8 characters)*" type="password" name="password" value={formData.password} onChange={handleInput} />
+                {!dataValidations.isValidPassword && <p className="errorMessage">{dataValidations.errorMessagePassword}</p>}
+              </FormGroup>
+              <Button type="submit" disabled={isButtonDisabled} className={isButtonDisabled ? 'btn-disabled' : 'btn-active'}>
+                <p className="btn-text">Next</p>
+              </Button>
 
-                        <FormGroup className='form-group'>
-                            <Input className='form-control signup-input' placeholder='Password(Min 8 characters)*' type="password" name='password' onChange={(e) => handleInputField(e, 'password')} />
-                            {/* <Label className='form-control-placeholder' for='fullName' sm={2}>Mobile Number<super>*</super></Label> */}
-                            {!isValidPassword &&
-                                <p className='errorMessage'>{errorMessagePwd}</p>
-                            }
-                        </FormGroup>
-
-                        <Button type="submit" disabled={isButtonDisabled} className={isButtonDisabled ? "btn-disabled" : "btn-active"} >
-                            <p className='btn-text'>Next</p></Button>
-                            <p className='center-item' onClick={()=>setIsProcessing(true)}>Already have an account?<a href='/recipe/signin'>SignIn</a></p>
-                    </Form>
-
-
-                </div>
-              
-            </Container>
-}
-
-
-        </div>
-    )
+              <p className="center-item" onClick={() => setIsProcessing(true)}>
+                Already have an account?<Link to="/recipe/signin">SignIn</Link>
+              </p>
+            </Form>
+          </div>
+        </Container>
+      )}
+    </div>
+  );
 }

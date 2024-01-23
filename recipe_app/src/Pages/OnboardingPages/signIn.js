@@ -1,6 +1,6 @@
 import { Container, Form, FormGroup, Input, Button, Label } from 'reactstrap'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../../Components/Loader'
 import '../../Assets/Styles/common.scss'
 import '../../Assets/Styles/signUpPage.scss'
@@ -134,7 +134,7 @@ export default function SignIn(){
 
                         <Button type="submit" disabled={isButtonDisabled} className={isButtonDisabled ? "btn-disabled" : "btn-active"} >
                             <p className='btn-text'>Next</p></Button>
-                            <p className='center-item' onClick={()=>setIsProcessing(true)}>New user?<a href='/recipe/signup'>Sign UP</a></p>
+                            <p className='center-item' onClick={()=>setIsProcessing(true)}>New user?<Link to='/recipe/signup'>Sign UP</Link></p>
                     </Form>
                     </div>
                     </Container>
