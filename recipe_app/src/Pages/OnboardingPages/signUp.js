@@ -46,11 +46,11 @@ export default function SignUp() {
       let newEmail = value;
       setFormData((prevData) => ({ ...prevData, email: newEmail }));
       let isValidEmail = validateEmail(newEmail);
-      setDataValidations((prevState) => ({ ...prevState, isValidEmail, errorMessageEmail: isValidEmail ? '' : 'Invalid email' }));
+      setDataValidations((prevState) => ({ ...prevState, isValidEmail, errorMessageEmail: newEmail.length>0 ? (isValidEmail ? '' : 'Invalid email') : '' }));
     } else if (name === 'password') {
       let password = value;
       let isValidPassword = password.length >= 8;
-      setDataValidations((prevState) => ({ ...prevState, isValidPassword, errorMessagePassword: isValidPassword ? '' : 'Min 8 characters required' }));
+      setDataValidations((prevState) => ({ ...prevState, isValidPassword, errorMessagePassword: password.length>0 ? (isValidPassword ? '' : 'Min 8 characters required') : '' }));
     }
 
     // setIsButtonDisabled(formData.fullName.length === 0 || formData.email.length === 0 || !dataValidations.isValidEmail || !dataValidations.isValidPassword);

@@ -33,7 +33,7 @@ const ModalComoonent = (props) => {
   const body = (
     <div className='modalBody'>
       <p id="simple-modal-description">
-        <p>Delete {props.details.title}?</p>
+        <h1 className='heading-text-level2'>Delete {props.details.title}?</h1>
         <hr/>
       </p>
       <div className='header-button'>
