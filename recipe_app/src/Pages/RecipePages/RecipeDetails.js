@@ -6,14 +6,16 @@ import '../../Assets/Styles/recipeDetails.scss'
 import { getRecipeImage } from "../../customHooks/GetImage";
 import { useNavigate } from 'react-router-dom';
 import routes from "../../Routes/RoutesList";
+import Loader from "../../Components/Loader";
 
 
 export default function RecipeDetails() {
 
     const location = useLocation();
     let id = location.state?.recipeId
-    const { data, error, isLoading } = useGetRecipesQuery();
+    
     const { data: recipe, error: error2, isLoading: loading } = useGetRecipesByIdQuery(id);
+    const { data, error, isLoading } = useGetRecipesQuery();
     const [latestRecipes, setLatestRecipes] = useState();
     const navigate = useNavigate();
 
@@ -33,10 +35,14 @@ export default function RecipeDetails() {
     }
 
     return (
+        <>
+        {/* <div className='center-loader'> */}
+{loading && <Loader show={loading} className='center-loader'/> }
+{/* </div> */}
         <div className="recipe-details-page center-item">
-
+ 
             <div className="details-page-container">
-
+               
                 {recipe &&
                     <div className="recipe-details">
                         <p className="heading-text-level1"> <b >{recipe.title} ({recipe.rating})</b> |  {recipe.category} | {recipe.subCategory} </p>
@@ -52,24 +58,25 @@ export default function RecipeDetails() {
                             <b>Ratings </b> <p className="normal-texts">{recipe.rating}</p>
                         </div>
                     </div>
-                }
+               }
 
                 <div className='sideColumnItems'>
+                    {recipe && latestRecipes &&
+                    <div>
                     <b className="heading-text-level1 center-item" >Latest</b>
-                    {latestRecipes &&
-                        latestRecipes.map((recipe) => (
+                        {latestRecipes.map((recipe) => (
                             <div className="side-column-card" onClick={() => showRecipeDetails(recipe.id)}>
                                 {/* <div className="center-item"> */}
                                 <img alt={recipe.title} src={getRecipeImage(recipe.title)} className="latest-recipe-image"></img>
                                 {/* </div> */}
                                 <b className="heading-text-level2 textOverFlow">{recipe.title}</b>
                             </div>
-                        ))
-
+                        ))}
+                        </div>
                     }
                 </div>
-
             </div>
         </div>
+        </>
     )
 }

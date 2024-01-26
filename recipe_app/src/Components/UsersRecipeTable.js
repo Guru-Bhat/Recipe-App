@@ -81,6 +81,7 @@ export default function UsersRecipeTable(props) {
   return (
     <div>
       <b className="heading-text-level2 center-item">My Uploads</b>
+      {!count>0?"No recipes uploaded yet.  Click below button to add new recipe" :
       <div className="table-container">
         <table >
           <tbody className='tableBody'>
@@ -102,6 +103,7 @@ export default function UsersRecipeTable(props) {
           </tbody>
         </table>
       </div>
+}
       
       {showModal &&
         <ModalComoonent showModal={showModal} details={recipeToBeDeleted} onClose={() => setShowModal(false)} onDelete={deleteRecipeHandler} />

@@ -9,6 +9,8 @@ import routes from "../../Routes/RoutesList";
 import Loader from "../../Components/Loader";
 import SearchBar from "../../Components/searchBar";
 import DisplayRecipes from "../../Components/displayRecipes";
+import DisplayRecipesSkeleton from "../../Components/displayRecipesSkeleton";
+
 
 export default function HomePage() {
     const { data, error, isLoading } = useGetRecipesQuery();
@@ -45,7 +47,8 @@ console.log("isLoggedIn",isLoggedIn, userName,email, role);
         </div>
             <div>
             <h1 className="heading-text-level1">Recipes</h1>
-            {!data ? (<div>{error ? error.message : 'Under maintanace'}</div>) :
+            {error ? <b>Unable to load the recipes...Please try after some time</b> :
+             isLoading ? <DisplayRecipesSkeleton /> :
             <DisplayRecipes recipes={filteredData.length>0 ? filteredData: data} />
     } 
             </div>
